@@ -1,0 +1,5 @@
+El archivo application.properties es fundamental en un proyecto de Spring. En este archivo
+se define la configuración de una aplicación, como por ejemplo, la conexión a la base de datos, el
+uso de modo debug, hacer un logging más detallado, entre otros. Para conocer más sobre las
+propiedades que pueden ir en este archivo, podemos visitar:
+https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
