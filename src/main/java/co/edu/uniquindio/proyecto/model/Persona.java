@@ -1,18 +1,32 @@
 package co.edu.uniquindio.proyecto.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
+/**
+ * Esta clase representa una persona que será padre de usuario y vendedor
+ */
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@EqualsAndHashCode
+@Getter
+@Setter
 public class Persona {
 
     @Id
-    private int cedula;
+    @Column(length = 10)
+    @EqualsAndHashCode.Include
+    private int codigo;
 
+    @Column(nullable = false, length = 150)
     private String nombre;
-
+    @Column(nullable = false, length = 150,unique = true)
     private String email;
+    @Column(nullable = false, length = 20)
     private String password;
+    @Column(nullable = true, length = 150)
     private String direccion;
-    private int telefono;
+
 }
