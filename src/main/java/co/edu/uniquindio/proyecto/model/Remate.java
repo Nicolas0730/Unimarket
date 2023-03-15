@@ -12,4 +12,5 @@ public class Remate {
     private Date fechaLimite;
 
 //    private Producto codigoProducto;
+    //Remate se relaciona a remate_usuario
 }

@@ -34,4 +34,6 @@ public class Compra implements Serializable {
     @JoinColumn(nullable = false)
     private Domicilio domicilio;
 
+    // compra tiene * productos
+
 }

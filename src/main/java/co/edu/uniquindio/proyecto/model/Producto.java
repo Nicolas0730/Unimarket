@@ -27,7 +27,8 @@ public class Producto implements Serializable {
 //    private EstadoPublicacion codigo;
 
     @ManyToMany
-    private List<Usuario> favoritos;
+    private List<Usuario> usuarios; //Un producto tiene muchos usuarios
+
     @Column(nullable = true)
     private CategoriaProducto categoria; //@ENUM Un producto puede tener varias categorias? 15/03/23 12:42am
 

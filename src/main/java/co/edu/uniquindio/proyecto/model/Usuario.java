@@ -26,8 +26,9 @@ public class Usuario extends Persona implements Serializable {
     @Column(nullable = true, length = 150)
     private int telefono;
 
-    @ManyToMany(mappedBy = "favoritos") //Productos favoritos del usuario
-    private List<Producto> productosFavoritos;
+    @ManyToMany() //Productos favoritos del usuario      Se quitaron los argumentos mappedBy = "usuarios" de @ManyToMany para usar JoinTable(name= "Favoritos"
+    @JoinTable(name = "Favoritos") //Garantiza que el nombre de la tabla intermedia sea Favoritos y no productocodigo_usuariocodigo
+    private List<Producto> productos;
 
     @OneToMany(mappedBy = "usuarios") //un usuario tiene muchos domicilios. un usuario no necesita de un domicilio
     private List<Domicilio> domicilios;
@@ -36,8 +37,7 @@ public class Usuario extends Persona implements Serializable {
     @OneToMany(mappedBy = "codigoUsuario")      //Un usuario no necesita que un comentario exista
     private List<Comentario> comentarios; //Un usuario tiene muchos comentarios
 
-    //******************
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario") //El usuario tiene muchas compras. Un usuario no depende de una compra
     private List<Compra> compra;
-    //*******************
+
 }
