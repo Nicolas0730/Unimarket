@@ -1,7 +1,21 @@
 package co.edu.uniquindio.proyecto.model;
 
-public class Imagen {
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-    private int codigo; //Foranea de producto
+import java.io.Serializable;
+
+@Entity
+@Getter
+@EqualsAndHashCode
+public class Imagen implements Serializable {
+
+    @Column(length = 255)
     private String ruta;
+
+    @Id
+    @EqualsAndHashCode.Include
+    @ManyToOne()
+    private Producto fotoProducto; //Depende del producto
 }

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.List;
@@ -23,15 +22,26 @@ public class Producto implements Serializable {
     private String descripcion;
     private double precio;
 
-//    private Vendedor codigo;
-//    private EstadoPublicacion codigo;
+    @ManyToOne
+    private Usuario vendedor; //Un producto tiene 1 vendedor. El producto depende del vendedor
 
-    @ManyToMany
-    private List<Usuario> usuarios; //Un producto tiene muchos usuarios
+    //    @ElementCollection?????????
+    //@Column(nullable = false)
+    private estadoPublicacion estado; //@Enum 1 producto tiene 1 estado
 
-    @Column(nullable = true)
-    private CategoriaProducto categoria; //@ENUM Un producto puede tener varias categorias? 15/03/23 12:42am
+    @ManyToMany(mappedBy = "productosFav")
+    private List<Usuario> usuarioss; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
+
+//    @ElementCollection?????????
+//    @Column(nullable = false)
+    private Categoria categoria; //@ENUM    1 producto Tiene 1 categoría
 
     @OneToMany(mappedBy = "codigoProducto") //Un producto no depende de un comentario
     private List<Comentario> comentarios; // Un producto tiene muchos comentarios
+
+    @OneToMany(mappedBy = "fotoProducto")
+    private List<Imagen> imagenesProducto; //@ElemenCollection?
+
+    @ManyToOne() //Producto no depende de detalle compra
+    private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra
 }

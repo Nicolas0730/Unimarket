@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,7 +15,7 @@ import java.util.Date;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-public class Comentario {
+public class Comentario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
@@ -27,9 +29,10 @@ public class Comentario {
     @JoinColumn(nullable = false) //Un comentario tiene un usuario (que lo escribio)
     private Usuario codigoUsuario; // Necesita que un usuario exista
 
-    @Column(length = 200,nullable = false)
+    @Lob
+    @Column(nullable = false)
     private String mensaje;
 
-    private Date fechaComentario;
+    private LocalDateTime fechaComentario;
 
 }

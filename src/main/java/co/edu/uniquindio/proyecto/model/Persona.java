@@ -14,7 +14,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Persona {
-
     @Id
     @Column(length = 10)
     @EqualsAndHashCode.Include
