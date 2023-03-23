@@ -1,11 +1,16 @@
 package co.edu.uniquindio.proyecto.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -14,13 +19,35 @@ import java.util.List;
 @EqualsAndHashCode
 public class Producto implements Serializable {
 
+
+    //-------------------------------- Atributos -------------------------------
+
     @EqualsAndHashCode.Include
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
+
+    @Column (nullable = false)
+    @NotBlank (message = "El nombre del producto es obligatorio")
     private String nombre;
+
+    @Column(nullable = false)
+    @PositiveOrZero
     private int unidades;
+
+    @NotBlank(message = "Debe añadir una descripción")
+    @Column(nullable = false)
     private String descripcion;
+
+    @Positive
+    @Column(nullable = false)
     private double precio;
+
+    @Future
+    @Column(nullable = false)
+    private Date fechaLimiteProducto;
+
+    //-------------------------------- Relaciones -------------------------------
 
     @ManyToOne
     private Usuario vendedor; //Un producto tiene 1 vendedor. El producto depende del vendedor

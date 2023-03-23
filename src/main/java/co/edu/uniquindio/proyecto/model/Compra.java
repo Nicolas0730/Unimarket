@@ -37,4 +37,5 @@ public class Compra implements Serializable {
     @OneToMany(mappedBy = "compra")
     private List<DetalleCompra> compras; //Compra no depende de detalleCompra
 
+
 }

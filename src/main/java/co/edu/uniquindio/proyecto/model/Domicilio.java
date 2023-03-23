@@ -13,6 +13,9 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode
 public class Domicilio implements Serializable {
+
+    //-------------------------------- Atributos ---------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
@@ -21,6 +24,8 @@ public class Domicilio implements Serializable {
 
     @Column(length = 50,nullable = false)
     private String direccion;
+
+    //-------------------------------- Relaciones ---------------------
 
     @ManyToOne  //Un Domicilio tiene un usuario
     @JoinColumn(nullable = false)

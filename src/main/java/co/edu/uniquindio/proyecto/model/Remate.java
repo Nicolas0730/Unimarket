@@ -1,8 +1,7 @@
 package co.edu.uniquindio.proyecto.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,12 +15,22 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode
 public class Remate implements Serializable {
+
+    //-------------------------------- Atributos ---------------------
+
     @Id
     @EqualsAndHashCode.Include
     private int codigo;
+
+    @Column (nullable = false)
+    @Future (message = "La fecha debe de estar definida en el futuro")
     private Date fechaLimite;
 
-//    private Producto codigoProducto;
+
+    //-------------------------------- Relaciones  ---------------------
+
+    @ManyToOne
+   private Producto producto;
 
     @OneToMany(mappedBy = "remate") //Remate no depende de remate usuario
     private List<RemateUsuario> remateUsuario;

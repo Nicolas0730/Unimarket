@@ -16,10 +16,22 @@ import java.util.Date;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Comentario implements Serializable {
+
+    //-------------------------------- Atributos ---------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private int codigo;
+
+    @Column(nullable = false)
+    private LocalDateTime fechaComentario;
+
+    @Lob
+    @Column(nullable = false, length = 200)
+    private String mensaje;
+
+    //-------------------------------- Relaciones ---------------------
 
     @ManyToOne
     @JoinColumn(nullable = false) //Un comentario corresponde a un producto
@@ -29,10 +41,7 @@ public class Comentario implements Serializable {
     @JoinColumn(nullable = false) //Un comentario tiene un usuario (que lo escribio)
     private Usuario codigoUsuario; // Necesita que un usuario exista
 
-    @Lob
-    @Column(nullable = false)
-    private String mensaje;
 
-    private LocalDateTime fechaComentario;
+
 
 }

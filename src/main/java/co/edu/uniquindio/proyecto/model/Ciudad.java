@@ -1,8 +1,7 @@
 package co.edu.uniquindio.proyecto.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
@@ -12,9 +11,18 @@ import java.io.Serializable;
 @Entity
 public class Ciudad implements Serializable {
 
+
+
+    //-------------------------------- Atributos ---------------------
     @Id
+    @EqualsAndHashCode.Include
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int codigo;
+
+    @Column (nullable = false)
     private String nombre;
+
+    //-------------------------------- Relaciones ---------------------
 
     @OneToOne
     private Domicilio domicilio;
