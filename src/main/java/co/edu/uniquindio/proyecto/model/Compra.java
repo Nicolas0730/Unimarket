@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyecto.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,12 +22,17 @@ public class Compra implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
 
+    @Column ( nullable = false)
+    private Date fechaCompra;
+
+    @Positive
+    @Column(nullable = false)
+    private double totalCompra;
+
     @ManyToOne()          //Una compra necesita 1 usuario, un usuario no necesita una compra
     @JoinColumn(nullable = false)
     private Usuario usuario;
 
-    private Date fechaCompra;
-    private double totalCompra;
     @ElementCollection //Si es element collection a pesar de que es solo 1 medio de pago?
     private List<MedioPago> medioPago; //Enumeracion
 
