@@ -35,6 +35,6 @@ public class DetalleCompra implements Serializable {
     @ManyToOne
     private Compra compra; //Detallecompra depende de Compra
 
-   // @OneToMany(mappedBy = "detalleCompra") //DetalleCompra necesita que existan productos
-    //private List<Producto> productos; //Un detalleCompra puede incluir varios productos
+   @OneToMany(mappedBy = "detalleCompra") //DetalleCompra necesita que existan productos
+    private List<Producto> productos; //Un detalleCompra puede incluir varios productos
 }
