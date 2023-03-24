@@ -1,3 +1,13 @@
 Ninguna clase de DTO maneja datos diferentes a los primitivos
 
 Los campos que tengan los mockups es la información que va en un DTO
+
+//Validación de números
+//    @Max(100)
+//    @Positive
+//    private int variableTipoEntera;
+
+    //Validación de fechas
+//    @Past
+//    @Future
+//    private LocalDate fechaNacimiento();
