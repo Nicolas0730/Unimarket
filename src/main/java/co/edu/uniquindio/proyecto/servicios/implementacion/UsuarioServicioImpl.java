@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyecto.servicios.implementacion;
 
 import co.edu.uniquindio.proyecto.dto.UsuarioDTO;
+import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
@@ -25,70 +26,92 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         if (buscado!= null){
             throw new Exception("El correo "+user.getCorreo()+" ya existe!");
         }
-
-       Usuario usuario=new Usuario();
-       usuario.setNombre(user.getNombre());
-       usuario.setEmail(user.getCorreo());
-       usuario.setTelefono(user.getTelefono());
-       usuario.setDireccion(user.getDireccion());
-       usuario.setPassword(user.getPass());
-
-        usuarioRepo.save(usuario);
-
+       Usuario usuario= convertiraUsuario(user);
         return usuarioRepo.save(usuario).getCodigo();
     }
 
     @Override
     public int actualizarUsuario(int codigoUsuario, UsuarioDTO user) throws Exception{
-        validarUsuario(codigoUsuario);
-        Optional<Usuario> buscado = usuarioRepo.findBy(codigoUsuario);
-        Usuario usuario = buscado.get(); //quiere decir que existe y lo asigna
+//        validarUsuario(codigoUsuario);
+//        Optional<Usuario> buscado = usuarioRepo.findBy(codigoUsuario);
+//        Usuario usuario = buscado.get(); //quiere decir que existe y lo asigna
 
-        usuario.setNombre(user.getNombre());
-        usuario.setEmail(user.getCorreo());
-        usuario.setTelefono(user.getTelefono());
-        usuario.setDireccion(user.getDireccion());
-        usuario.setPassword(user.getPass());
+        validarExiste(codigoUsuario);
 
-        usuarioRepo.save(usuario);
-        return 0;
+        Usuario usuario = convertiraUsuario(user);
+        usuario.setCodigo(codigoUsuario);
+
+        return usuarioRepo.save(usuario).getCodigo();
     }
 
     @Override
     public int eliminarUsuario(int codigoUsuario) throws Exception{
-        validarUsuario(codigoUsuario);
+        validarExiste(codigoUsuario);
         usuarioRepo.deleteById(codigoUsuario);
         return codigoUsuario;
     }
 
     @Override
-    public UsuarioDTO obtenerUsuario(int codigoUsuario) throws Exception {
-        validarUsuario(codigoUsuario);
-        Usuario usuario = usuarioRepo.findBy(codigoUsuario).get();
-        return convertir(usuario);
+    public UsuarioGetDTO obtenerUsuario(int codigoUsuario) throws Exception {
+        return convertiraUsuarioaDTO(obtener(codigoUsuario));
     }
 
-    private void validarUsuario(int codigoUsuario) throws Exception {
-        Optional<Usuario> usuario = usuarioRepo.findBy(codigoUsuario); //Asegura que no exista el nullPointerException
+    private Usuario obtener(int codigoUsuario) throws Exception{
+        Optional<Usuario> usuario = usuarioRepo.findById(codigoUsuario); //Asegura que no exista el nullPointerException
 
         if (usuario.isEmpty()){
             throw new Exception("El usuario con el codigo "+codigoUsuario+" no existe");
         }
-
+        return usuario.get();
     }
 
-    //Mejor para la BD
-    private void validarUsuario2(int codigoUsuario) throws Exception {
-        boolean existe = usuarioRepo.existsById(codigoUsuario); //Asegura que no exista el nullPointerException
-
-        if (!existe){
-            throw new Exception("El usuario con el codigo "+codigoUsuario+" no existe");
-        }
+    private void validarExiste(int codigoUsuario) throws Exception {
+        boolean existe = usuarioRepo.existsById(codigoUsuario);
+        if (!existe)
+            throw new Exception("El codigo no está asociado con el usuario "+codigoUsuario);
     }
 
-    private UsuarioDTO convertir(Usuario usuario){
-        UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(),usuario.getEmail(),usuario.getTelefono(),usuario.getPassword(),usuario.getTelefono());
+    private UsuarioGetDTO convertiraUsuarioaDTO(Usuario usuario){
+
+        UsuarioGetDTO usuarioDTO = new UsuarioGetDTO(
+                usuario.getCodigo(),
+                usuario.getNombre(),
+                usuario.getEmail(),
+                usuario.getDireccion(),
+                usuario.getTelefono());
 
         return usuarioDTO;
     }
+
+    /**
+     * Método que convierte un usuarioDTO en un usuario
+     * @param usuarioDTO
+     * @return
+     */
+    private Usuario convertiraUsuario(UsuarioDTO usuarioDTO){
+
+        Usuario usuario = new Usuario();
+        usuario.setNombre( usuarioDTO.getNombre() );
+        usuario.setEmail( usuarioDTO.getCorreo() );
+        usuario.setDireccion( usuarioDTO.getDireccion() );
+        usuario.setTelefono( usuarioDTO.getTelefono() );
+        usuario.setPassword( usuarioDTO.getPass() );
+
+        return usuario;
+    }
+    //Mejor para la BD
+//    private void validarUsuario2(int codigoUsuario) throws Exception {
+//        boolean existe = usuarioRepo.existsById(codigoUsuario); //Asegura que no exista el nullPointerException
+//
+//        if (!existe){
+//            throw new Exception("El usuario con el codigo "+codigoUsuario+" no existe");
+//        }
+//    }
+//    private UsuarioDTO convertir2(Usuario usuario){
+//        UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(),usuario.getEmail(),usuario.getTelefono(),usuario.getPassword(),usuario.getTelefono());
+//
+//        return usuarioDTO;
+//    }
+
+
 }
