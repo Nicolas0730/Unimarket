@@ -27,8 +27,8 @@ public class Comentario implements Serializable {
     @Column(nullable = false)
     private LocalDateTime fechaComentario;
 
-    @Lob
-    @Column(nullable = false, length = 200)
+    @Lob // Mapea como text el tipo del atributo en la BD
+    @Column(nullable = false)
     private String mensaje;
 
     //-------------------------------- Relaciones ---------------------

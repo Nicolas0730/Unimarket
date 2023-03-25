@@ -6,7 +6,7 @@ import co.edu.uniquindio.proyecto.model.Usuario;
 
 public interface UsuarioServicio {
 
-    int crearUsuario(UsuarioDTO user) throws Exception; //El tipo de retorno es 0 porque se va a retornar el codigo con que el usuario se almacena o 0 si no se creo
+    int crearUsuario(UsuarioDTO user) throws Exception; //El tipo de retorno es int porque se va a retornar el codigo con que el usuario se almacena o 0 si no se creo
 
     int actualizarUsuario( int codigoUsuario, UsuarioDTO userDTO) throws Exception; //el codigo del usuario que voy a modificar y el nuevo usuario con los nuevos datos
 
