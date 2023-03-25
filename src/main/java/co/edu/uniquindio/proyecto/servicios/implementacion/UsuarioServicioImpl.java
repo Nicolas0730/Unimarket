@@ -41,7 +41,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Override
     public int actualizarUsuario(int codigoUsuario, UsuarioDTO user) throws Exception{
         validarUsuario(codigoUsuario);
-        Optional<Usuario> buscado = usuarioRepo.findBy(codigoUsuario);
+        Optional<Usuario> buscado = usuarioRepo.findById(codigoUsuario);
         Usuario usuario = buscado.get(); //quiere decir que existe y lo asigna
 
         usuario.setNombre(user.getNombre());
@@ -64,12 +64,12 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Override
     public UsuarioDTO obtenerUsuario(int codigoUsuario) throws Exception {
         validarUsuario(codigoUsuario);
-        Usuario usuario = usuarioRepo.findBy(codigoUsuario).get();
+        Usuario usuario = usuarioRepo.findById(codigoUsuario).get();
         return convertir(usuario);
     }
 
     private void validarUsuario(int codigoUsuario) throws Exception {
-        Optional<Usuario> usuario = usuarioRepo.findBy(codigoUsuario); //Asegura que no exista el nullPointerException
+        Optional<Usuario> usuario = usuarioRepo.findById(codigoUsuario); //Asegura que no exista el nullPointerException
 
         if (usuario.isEmpty()){
             throw new Exception("El usuario con el codigo "+codigoUsuario+" no existe");
@@ -86,9 +86,9 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         }
     }
 
-    private UsuarioDTO convertir(Usuario usuario){
-        UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(),usuario.getEmail(),usuario.getTelefono(),usuario.getPassword(),usuario.getTelefono());
+    //private UsuarioDTO convertir(Usuario usuario){
+      //  UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(),usuario.getEmail(),usuario.getTelefono(),usuario.getPassword(),usuario.getTelefono());
 
-        return usuarioDTO;
-    }
+       // return usuarioDTO;
+   // }
 }
