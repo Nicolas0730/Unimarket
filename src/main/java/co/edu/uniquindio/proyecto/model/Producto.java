@@ -8,6 +8,7 @@ import jakarta.validation.constraints.PositiveOrZero;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -29,6 +30,7 @@ public class Producto implements Serializable {
 
     @Column (nullable = false)
     @NotBlank (message = "El nombre del producto es obligatorio")
+    @Length(max = 100)
     private String nombre;
 
     @Column(nullable = false)
@@ -36,6 +38,7 @@ public class Producto implements Serializable {
     private int unidades;
 
     @NotBlank(message = "Debe añadir una descripción")
+    @Length(max = 300)
     @Column(nullable = false)
     private String descripcion;
 
