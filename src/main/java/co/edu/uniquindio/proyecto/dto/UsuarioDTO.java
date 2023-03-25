@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 @Getter
 @Setter
 public class UsuarioDTO {
-    private String codigo;
+//    private String codigo;
     @NotNull
     @NotBlank
     @Length(max = 100)
