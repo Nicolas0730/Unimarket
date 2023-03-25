@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class usuarioServicioimpl implements UsuarioServicio {
+public class UsuarioServicioimpl implements UsuarioServicio {
 
     @Autowired
     private UsuarioRepo usuarioRepo;
