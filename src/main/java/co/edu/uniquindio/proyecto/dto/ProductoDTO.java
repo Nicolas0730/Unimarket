@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyecto.dto;
 
 import co.edu.uniquindio.proyecto.model.Categoria;
+import co.edu.uniquindio.proyecto.model.Imagen;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,7 +20,6 @@ public class ProductoDTO {
     @NotBlank
     @Length(max = 100)
     private String nombre;
-
     @NotNull
     @Length(min=1,max = 300,message = "La descripción debe tener máximo 300 caracteres.")
     private String descripcion;
@@ -28,7 +28,7 @@ public class ProductoDTO {
     private int codigoVendedor;
 
     //Cómo parametrizo una lista ?
-    private List<String> imagenes;
+    private List<Imagen> imagenes;
     public List<Categoria> categorias;
 
 }

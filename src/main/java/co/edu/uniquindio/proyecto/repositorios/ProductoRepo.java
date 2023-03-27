@@ -10,7 +10,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
     //Consultas a la base de datos
 
-    @Query("SELECT p from Producto p WHERE p.codigo= :codigo")
+    @Query("SELECT p from Producto p WHERE p.codigoVendedor= :codigo")
     Producto buscarProducto(int codigo);
 
 

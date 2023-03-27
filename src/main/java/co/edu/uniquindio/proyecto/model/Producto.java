@@ -26,7 +26,7 @@ public class Producto implements Serializable {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
+    private int codigoVendedor;
 
     @Column (nullable = false)
     @NotBlank (message = "El nombre del producto es obligatorio")
@@ -62,9 +62,9 @@ public class Producto implements Serializable {
     @ManyToMany(mappedBy = "productosFav")
     private List<Usuario> usuarioss; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
 
-//    @ElementCollection?????????
+    @ElementCollection //26/03 activé el element collection 11:07 pm
 //    @Column(nullable = false)
-    private Categoria categoria; //@ENUM    1 producto Tiene 1 categoría
+    private List<Categoria> categoria; //@ENUM    1 producto Tiene 1 categoría
 
     @OneToMany(mappedBy = "codigoProducto") //Un producto no depende de un comentario
     private List<Comentario> comentarios; // Un producto tiene muchos comentarios
@@ -74,4 +74,5 @@ public class Producto implements Serializable {
 
     @ManyToOne() //Producto no depende de detalle compra
     private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra
+
 }
