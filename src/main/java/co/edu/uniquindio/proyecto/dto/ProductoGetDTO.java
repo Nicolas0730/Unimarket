@@ -17,6 +17,8 @@ import java.util.List;
 public class ProductoGetDTO {
 
     private int codigo;
+
+    private LocalDateTime fechaPublicacion;
     //Estado
     private LocalDateTime fechaLimite;
     private String nombre;

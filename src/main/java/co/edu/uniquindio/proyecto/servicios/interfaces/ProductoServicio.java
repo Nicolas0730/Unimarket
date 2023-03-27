@@ -9,14 +9,14 @@ import java.util.List;
 
 public interface ProductoServicio {
 
-    int crearProducto(ProductoDTO productoDTO);
-    int actualizarProducto(int codigoProducto,ProductoDTO productoDTO);
-    int eliminarProducto(int codigoProducto);
-    ProductoGetDTO obtenerProducto(int codigoProducto);
-    List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario);
-    List<ProductoGetDTO> listarProductosCategoria(Categoria categoria);//Es una enumeracion
-    List<ProductoGetDTO> listarProductosEstado(Estado estado);
-    List<ProductoGetDTO> listarProductoNombre(String nombre);
-    List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax);
+    int crearProducto(ProductoDTO productoDTO) throws Exception;
+    int actualizarProducto(int codigoProducto,ProductoDTO productoDTO) throws Exception;
+    int eliminarProducto(int codigoProducto) throws Exception;
+    ProductoGetDTO obtenerProducto(int codigoProducto) throws Exception;
+    List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario) throws Exception;
+    List<ProductoGetDTO> listarProductosCategoria(Categoria categoria) throws Exception;//Es una enumeracion
+    List<ProductoGetDTO> listarProductosEstado(Estado estado) throws Exception;
+    List<ProductoGetDTO> listarProductoNombre(String nombre) throws Exception;
+    List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
 
 }

@@ -58,7 +58,8 @@ public class UsuarioServicioimpl implements UsuarioServicio {
         return convertiraUsuarioaDTO(obtener(codigoUsuario));
     }
 
-    private Usuario obtener(int codigoUsuario) throws Exception{
+    @Override
+    public Usuario obtener(int codigoUsuario) throws Exception{
         Optional<Usuario> usuario = usuarioRepo.findById(codigoUsuario); //Asegura que no exista el nullPointerException
 
         if (usuario.isEmpty()){
