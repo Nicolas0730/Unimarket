@@ -14,14 +14,26 @@ import java.util.Date;
 @EqualsAndHashCode
 public class RemateUsuario implements Serializable {
 
+
+
+    //-------------------------------- Atributos ---------------------
+
+
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false,length = 30,unique = true)
     public int codigo;
 
-    private double valor; //Falta parametrizar
-    private Date fecha_subasta; //Falta parametrizar
+    @Column (nullable = false)
+    private double valor;
+
+    @Column ( nullable = false)
+    private Date fecha_subasta;
+
+
+    //-------------------------------- Relaciones ---------------------
+
 
     @ManyToOne
     private Remate remate; //Remateusuario depende de un remate

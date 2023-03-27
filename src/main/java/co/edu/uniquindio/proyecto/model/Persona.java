@@ -28,4 +28,5 @@ public class Persona {
     @Column(nullable = true, length = 150)
     private String direccion;
 
+    //@Builder sirve para crear objetos más rapido
 }
