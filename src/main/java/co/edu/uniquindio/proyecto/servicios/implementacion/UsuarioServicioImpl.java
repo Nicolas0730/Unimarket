@@ -5,12 +5,14 @@ import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class UsuarioServicioImpl implements UsuarioServicio {
 
     @Autowired
@@ -56,7 +58,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return convertiraUsuarioaDTO(obtener(codigoUsuario));
     }
 
-    private Usuario obtener(int codigoUsuario) throws Exception{
+    Usuario obtener(int codigoUsuario) throws Exception{
         Optional<Usuario> usuario = usuarioRepo.findById(codigoUsuario); //Asegura que no exista el nullPointerException
 
         if (usuario.isEmpty()){
@@ -71,7 +73,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
             throw new Exception("El codigo no está asociado con el usuario "+codigoUsuario);
     }
 
-    private UsuarioGetDTO convertiraUsuarioaDTO(Usuario usuario){
+    private UsuarioGetDTO convertiraUsuarioaDTO(Usuario usuario)throws Exception{
 
         UsuarioGetDTO usuarioDTO = new UsuarioGetDTO(
                 usuario.getCodigo(),
@@ -88,7 +90,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
      * @param usuarioDTO
      * @return
      */
-    private Usuario convertiraUsuario(UsuarioDTO usuarioDTO){
+    private Usuario convertiraUsuario(UsuarioDTO usuarioDTO)throws Exception{
 
         Usuario usuario = new Usuario();
         usuario.setNombre( usuarioDTO.getNombre() );

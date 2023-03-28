@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface ProductoServicio {
 
-    int crearProducto(ProductoDTO productoDTO);
-    int actualizarProducto(int codigoProducto,ProductoDTO productoDTO);
-    int eliminarProducto(int codigoProducto);
-    ProductoGetDTO obtenerProducto(int codigoProducto);
+    int crearProducto(ProductoDTO productoDTO) throws Exception;
+    int actualizarProducto(int codigoProducto,ProductoDTO productoDTO)  throws Exception;
+    int eliminarProducto(int codigoProducto)throws Exception;
+    ProductoGetDTO obtenerProducto(int codigoProducto)throws Exception;
     List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario);
     List<ProductoGetDTO> listarProductosCategoria(Categoria categoria);//Es una enumeracion
     List<ProductoGetDTO> listarProductosEstado(Estado estado);
