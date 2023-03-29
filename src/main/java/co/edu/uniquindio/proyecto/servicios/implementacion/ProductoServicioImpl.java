@@ -30,13 +30,15 @@ public class ProductoServicioImpl implements ProductoServicio {
 
         Producto producto = new Producto();
         producto.setNombre(productoDTO.getNombre());
+        producto.setUnidades(productoDTO.getUnidades());
         producto.setDescripcion(producto.getDescripcion());
         producto.setPrecio(productoDTO.getPrecio());
+        producto.setFechaPublicacion(LocalDateTime.now());
+        producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
 //        producto.setImagenesProducto(productoDTO.getImagenes());
 //        producto.setCategoria(productoDTO.getCategorias());      Estos toca corregirlos porque genera errores 27/03 3:02 Pm
-        producto.setFechaPublicacion(LocalDateTime.now());
-        producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
+
 
         return productoRepo.save(producto).getCodigo();
     }
@@ -94,9 +96,17 @@ public class ProductoServicioImpl implements ProductoServicio {
 
 
 
-// falta terminar el convertir y mirar los mockups
+ //falta terminar el convertir y mirar los mockups
     private ProductoGetDTO convertir ( Producto producto){
-        ProductoGetDTO productoGetDTO = new ProductoGetDTO();
+        ProductoGetDTO productoGetDTO = new ProductoGetDTO(
+                producto.getCodigo(),
+                producto.getNombre(),
+                producto.getDescripcion(),
+                producto.getUnidades(),
+                producto.getPrecio(),
+                producto.getVendedor().getCodigo(),
+                producto.getFechaLimiteProducto()
+        );
         return productoGetDTO;
     }
 }

@@ -2,6 +2,7 @@ package co.edu.uniquindio.proyecto.dto;
 
 import co.edu.uniquindio.proyecto.model.Categoria;
 import co.edu.uniquindio.proyecto.model.Estado;
+import co.edu.uniquindio.proyecto.model.Imagen;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,18 +20,29 @@ public class ProductoGetDTO {
 
     private int codigo;
 
-    private Estado activo;
-
-    private LocalDateTime fechaPublicacion;
-    //Estado
-    private LocalDateTime fechaLimite;
     private String nombre;
+
     private String descripcion;
+
     private int unidades;
-    private float precio;
+
+    private double precio;
+
     private int codigoVendedor;
-    private List<String> imagenes;
-    public List<Categoria> categorias;
+
+
+
+
+    private LocalDateTime fechaLimite;
+
+
+
+
+    // private Estado activo; ------ Faltan organizar estas 3, porque el estado activo
+    // y las otras dos menos jejeje :3
+//    private List<String> imagenes;
+//    public List<Categoria> categorias;
+
 
 
 

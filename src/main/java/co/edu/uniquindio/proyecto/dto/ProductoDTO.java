@@ -33,7 +33,7 @@ public class ProductoDTO {
 
     @Positive
     @Column(nullable = false)
-    private float precio;
+    private double precio;
     private int codigoVendedor;
 
     //Cómo parametrizo una lista ?
