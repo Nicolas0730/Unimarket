@@ -36,8 +36,9 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setFechaPublicacion(LocalDateTime.now());
         producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
+        producto.setEstado(productoDTO.getEstado());
 //        producto.setImagenesProducto(productoDTO.getImagenes());
-//        producto.setCategoria(productoDTO.getCategorias());      Estos toca corregirlos porque genera errores 27/03 3:02 Pm
+ //      producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
 
 
         return productoRepo.save(producto).getCodigo();

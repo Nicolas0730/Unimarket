@@ -52,6 +52,8 @@ public class Producto implements Serializable {
     @Column (nullable = false)
     private LocalDateTime fechaPublicacion;
 
+
+
     //-------------------------------- Relaciones -------------------------------
 
     @ManyToOne
@@ -59,7 +61,7 @@ public class Producto implements Serializable {
 
     //    @ElementCollection?????????
     //@Column(nullable = false)
-    private estadoPublicacion estado; //@Enum 1 producto tiene 1 estado
+    private Estado estado; //@Enum 1 producto tiene 1 estado
 
     @ManyToMany(mappedBy = "productosFav")
     private List<Usuario> usuarioss; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
