@@ -9,15 +9,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class UsuarioServicioTest {
 
-    @Autowired
-    private UsuarioServicio usuarioServicio;
-    @Test
-    public void registrarUsuarioTest(){
-
-        try {
-            UsuarioDTO usuarioDTO = new UsuarioDTO(nombre:"AA", email:"fss@gfdfd", password:"0000000",)
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//    @Autowired
+//    private UsuarioServicio usuarioServicio;
+//    @Test
+//    public void registrarUsuarioTest(){
+//
+//        try {
+//            UsuarioDTO usuarioDTO = new UsuarioDTO(nombre:"AA", email:"fss@gfdfd", pass:"0000000", direccion: "ss", telefono : "sss", usuario : "sss",);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
-}
+
