@@ -5,17 +5,19 @@ import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class UsuarioServicioImpl implements UsuarioServicio {
+@AllArgsConstructor
+public class UsuarioServicioimpl implements UsuarioServicio {
 
     @Autowired
     private UsuarioRepo usuarioRepo;
-//        usuarioRepo.save(); //Guardar con un insert into
+    //        usuarioRepo.save(); //Guardar con un insert into
 //        usuarioRepo.findBy(); //Select * from tabla WHERE id = :id
 //        usuarioRepo.delete();//delete from
 //        usuarioRepo.existsById(); ////Select * from tabla WHERE id = :id
@@ -26,7 +28,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         if (buscado!= null){
             throw new Exception("El correo "+user.getCorreo()+" ya existe!");
         }
-       Usuario usuario= convertiraUsuario(user);
+        Usuario usuario= convertiraUsuario(user);
         return usuarioRepo.save(usuario).getCodigo();
     }
 
@@ -56,7 +58,8 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return convertiraUsuarioaDTO(obtener(codigoUsuario));
     }
 
-    private Usuario obtener(int codigoUsuario) throws Exception{
+    @Override
+    public Usuario obtener(int codigoUsuario) throws Exception{
         Optional<Usuario> usuario = usuarioRepo.findById(codigoUsuario); //Asegura que no exista el nullPointerException
 
         if (usuario.isEmpty()){
@@ -99,19 +102,4 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
         return usuario;
     }
-    //Mejor para la BD
-//    private void validarUsuario2(int codigoUsuario) throws Exception {
-//        boolean existe = usuarioRepo.existsById(codigoUsuario); //Asegura que no exista el nullPointerException
-//
-//        if (!existe){
-//            throw new Exception("El usuario con el codigo "+codigoUsuario+" no existe");
-//        }
-//    }
-//    private UsuarioDTO convertir2(Usuario usuario){
-//        UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(),usuario.getEmail(),usuario.getTelefono(),usuario.getPassword(),usuario.getTelefono());
-//
-//        return usuarioDTO;
-//    }
-
-
 }

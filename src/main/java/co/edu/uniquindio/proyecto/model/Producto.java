@@ -1,16 +1,14 @@
 package co.edu.uniquindio.proyecto.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +27,7 @@ public class Producto implements Serializable {
     private int codigo;
 
     @Column (nullable = false)
+    @NotNull
     @NotBlank (message = "El nombre del producto es obligatorio")
     @Length(max = 100)
     private String nombre;
@@ -48,7 +47,10 @@ public class Producto implements Serializable {
 
     @Future
     @Column(nullable = false)
-    private Date fechaLimiteProducto;
+    private LocalDateTime fechaLimiteProducto;
+
+    @Column (nullable = false)
+    private LocalDateTime fechaPublicacion;
 
     //-------------------------------- Relaciones -------------------------------
 
