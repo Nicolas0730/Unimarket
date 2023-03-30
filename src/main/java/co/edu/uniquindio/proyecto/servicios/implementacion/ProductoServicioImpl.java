@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -36,8 +37,9 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setFechaPublicacion(LocalDateTime.now());
         producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
+      //  producto.setImagenesProducto(productoDTO.getImagenes());
         producto.setEstado(productoDTO.getEstado());
-//        producto.setImagenesProducto(productoDTO.getImagenes());
+
  //      producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
 
 
@@ -107,6 +109,8 @@ public class ProductoServicioImpl implements ProductoServicio {
                 producto.getPrecio(),
                 producto.getVendedor().getCodigo(),
                 producto.getFechaLimiteProducto()
+//                producto.getCategoria().name()
+
         );
         return productoGetDTO;
     }
