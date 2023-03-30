@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepo extends JpaRepository<Usuario,Integer> {
 
     //JPQL --> Lenguaje de consultas de persistencia de Java
+
+    //Usuario es la clase, no la tabla
     @Query("SELECT u from Usuario u WHERE u.email= :correo") // el :correo hace referencia al parámetro
     Usuario buscarUsuario(String correo);
 }
