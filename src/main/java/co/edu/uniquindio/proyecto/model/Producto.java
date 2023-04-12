@@ -64,7 +64,7 @@ public class Producto implements Serializable {
     private Estado estado; //@Enum 1 producto tiene 1 estado
 
     @ManyToMany(mappedBy = "productosFav")
-    private List<Usuario> usuarioss; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
+    private List<Usuario> usuarios; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
 
 //    @ElementCollection?????????
 //    @Column(nullable = false)
