@@ -18,4 +18,11 @@ public interface UsuarioServicio {
     //Dado un codigo,   retorna la lista de los favoritos. O dado un codigo, retorna sus productos. O dado un codigo retorna sus compras
 
     public Usuario obtener(int codigoUsuario) throws Exception;
+
+    UsuarioGetDTO convertiraUsuario(int codigoUsuario)throws Exception;
+
+    public  Usuario convertirUsuario(int codigoUsuario)throws Exception;
+
+
+
 }

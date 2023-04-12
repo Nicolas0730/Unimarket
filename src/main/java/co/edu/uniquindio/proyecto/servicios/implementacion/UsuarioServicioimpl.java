@@ -68,13 +68,23 @@ public class UsuarioServicioimpl implements UsuarioServicio {
         return usuario.get();
     }
 
+    @Override
+    public UsuarioGetDTO convertiraUsuario(int codigoUsuario) throws Exception {
+        return null;
+    }
+
+    @Override
+    public Usuario convertirUsuario(int codigoUsuario) throws Exception {
+        return null;
+    }
+
     private void validarExiste(int codigoUsuario) throws Exception {
         boolean existe = usuarioRepo.existsById(codigoUsuario);
         if (!existe)
             throw new Exception("El codigo no está asociado con el usuario "+codigoUsuario);
     }
 
-    private UsuarioGetDTO convertiraUsuarioaDTO(Usuario usuario){
+    public UsuarioGetDTO convertiraUsuarioaDTO(Usuario usuario){
 
         UsuarioGetDTO usuarioDTO = new UsuarioGetDTO(
                 usuario.getCodigo(),

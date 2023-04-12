@@ -2,11 +2,11 @@ package co.edu.uniquindio.proyecto.servicios.implementacion;
 
 import org.springframework.stereotype.Service;
 
-
+public class EmailServicioImpl {
     @Service
     public class EmailServicio {}
-
- //       private final JavaMailSender javaMailSender;
+//metodo de email en priyecto avanzada de burgos
+//        private final JavaMailSender javaMailSender;
 //
 //        public EmailServicio(JavaMailSender javaMailSender) {
 //            this.javaMailSender = javaMailSender;
@@ -29,5 +29,6 @@ import org.springframework.stereotype.Service;
 //                e.printStackTrace();
 //            }
 //        }
-
-
+//
+//
+}

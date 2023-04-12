@@ -92,7 +92,12 @@ public class ProductoServicioImpl implements ProductoServicio {
         return null;
     }
 
- //falta terminar el convertir y mirar los mockups
+    @Override
+    public List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception {
+        return null;
+    }
+
+    //falta terminar el convertir y mirar los mockups
     private ProductoGetDTO convertir ( Producto producto){
         ProductoGetDTO productoGetDTO = new ProductoGetDTO(
                 producto.getCodigo(),
@@ -107,4 +112,6 @@ public class ProductoServicioImpl implements ProductoServicio {
         );
         return productoGetDTO;
     }
+    //@Override
+    //public List<ProductoGetDTO> listarProductosFavoritos()
 }
