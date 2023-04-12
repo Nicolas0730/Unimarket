@@ -1,8 +1,5 @@
 package co.edu.uniquindio.proyecto.dto;
 
-import co.edu.uniquindio.proyecto.model.Categoria;
-import co.edu.uniquindio.proyecto.model.Estado;
-import co.edu.uniquindio.proyecto.model.Imagen;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

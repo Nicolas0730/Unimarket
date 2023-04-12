@@ -37,11 +37,9 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setFechaPublicacion(LocalDateTime.now());
         producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
-      //  producto.setImagenesProducto(productoDTO.getImagenes());
-        producto.setEstado(productoDTO.getEstado());
-
- //      producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
-
+        producto.setImagenesProducto(productoDTO.getImagenes());
+        producto.setEstado(Estado.SIN_REVISAR);
+        producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
 
         return productoRepo.save(producto).getCodigo();
     }
@@ -93,11 +91,6 @@ public class ProductoServicioImpl implements ProductoServicio {
     public List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) {
         return null;
     }
-
-
-
-
-
 
  //falta terminar el convertir y mirar los mockups
     private ProductoGetDTO convertir ( Producto producto){

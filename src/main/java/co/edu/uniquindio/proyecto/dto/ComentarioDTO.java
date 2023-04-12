@@ -2,12 +2,13 @@ package co.edu.uniquindio.proyecto.dto;
 
 import co.edu.uniquindio.proyecto.model.Producto;
 import co.edu.uniquindio.proyecto.model.Usuario;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @Getter
@@ -19,7 +20,7 @@ public class ComentarioDTO {
     @NotBlank(message = "La contraseña no puede ser vacía")
     @NotNull(message = "La contraseña no puede ser null")
     private String mensaje;
-    private Usuario codigoUsuario;
-    private Producto codigoProducto;
+    private int codigoUsuario;
+    private int codigoProducto;
 
 }

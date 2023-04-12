@@ -18,5 +18,6 @@ public interface ProductoServicio {
     List<ProductoGetDTO> listarProductosEstado(Estado estado) throws Exception;
     List<ProductoGetDTO> listarProductoNombre(String nombre) throws Exception;
     List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
+    List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception;
 
 }
