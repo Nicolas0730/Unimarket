@@ -31,6 +31,6 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     @Query ("select p from Producto p where p.estado = co.edu.uniquindio.proyecto.model.Estado.APROBADO")
     List<Producto> listarProductosEstado (Estado estado);
 
-//    @Query ("select p from Producto p where p.usuarios.codigo = :codigoUsuario")
+//    @Query ("select p from Producto p where p.vendedor.codigo = :codigoUsuario")
 //    List<Producto> listarProductosUsuario (int codigoUsuario);
 }
