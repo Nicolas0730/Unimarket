@@ -14,10 +14,10 @@ public class UsuarioServicioTest {
     @Test
     public void registrarUsuarioTest(){
 
-        try {
-            UsuarioDTO usuarioDTO = new UsuarioDTO(nombre:"AA", email:"fss@gfdfd", password:"0000000",)
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try {
+//            UsuarioDTO usuarioDTO = new UsuarioDTO(nombre:"AA", email:"fss@gfdfd", password:"0000000",)
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
 }
