@@ -1,6 +1,9 @@
 package co.edu.uniquindio.proyecto.repositorios;
 
+import co.edu.uniquindio.proyecto.model.Categoria;
+import co.edu.uniquindio.proyecto.model.Estado;
 import co.edu.uniquindio.proyecto.model.Producto;
+import co.edu.uniquindio.proyecto.model.Usuario;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,10 +16,21 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
     //Consultas a la base de datos
 
-    @Query("SELECT p from Producto p WHERE p.codigo= :codigo")
-    Producto buscarProducto(int codigo);
+    @Query("SELECT p FROM Producto p WHERE p.codigo= :codigo")
+    Producto obtenerProducto (int codigo);
 
-    @Query("Select p from Producto p where p.nombre like concat('%', :nombre ,'%')  and p.activo = true")
+    @Query("SELECT p FROM Producto p WHERE p.nombre like concat('%', :nombre ,'%')  and p.estado = co.edu.uniquindio.proyecto.model.Estado.APROBADO")
     List<Producto> listarProductoNombre (String nombre );
 
+    @Query ("select p from Producto p where p.categoria = co.edu.uniquindio.proyecto.model.Categoria ")
+    List <Producto> listarProductosCategoria (Categoria categoria);
+
+//    @Query ("select p from Producto p where p.categoria = :categoria MEMBER OF p.categoria")
+//    List<Producto> listarProductosCategoria (Categoria categoria);
+
+    @Query ("select p from Producto p where p.estado = co.edu.uniquindio.proyecto.model.Estado.APROBADO")
+    List<Producto> listarProductosEstado (Estado estado);
+
+//    @Query ("select p from Producto p where p.usuarios.codigo = :codigoUsuario")
+//    List<Producto> listarProductosUsuario (int codigoUsuario);
 }
