@@ -1,5 +1,7 @@
 package co.edu.uniquindio.proyecto.dto;
 
+import co.edu.uniquindio.proyecto.model.Categoria;
+import co.edu.uniquindio.proyecto.model.Estado;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +35,10 @@ public class ProductoGetDTO {
     private LocalDateTime fechaLimite;
 
 
+    private Estado estado;
 
+    private Categoria categoria;
+//creo que ahi se arreglo lo del comentario de abajo
 
     // private Estado activo; ------ Faltan organizar estas 3, porque el estado activo
     // y las otras dos menos jejeje :3

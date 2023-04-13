@@ -11,6 +11,9 @@ public interface CompraServicio {
     Compra obtenerCompra(Integer idCompra)throws Exception;
 
     int crearCompra(CompraDTO compraDTO);
-    List<CompraGetDTO> listarCompras(int codigoUsuario);
+//se debe guardar, además del cliente y el producto (o los productos), la fecha, el total de la compra y el método de pago.
+    List<CompraGetDTO> listarCompras(int codigoUsuario); //listar compras dado el codigo del usuario
     CompraGetDTO obtenerCompra(int codigoCompra);
+
+
 }

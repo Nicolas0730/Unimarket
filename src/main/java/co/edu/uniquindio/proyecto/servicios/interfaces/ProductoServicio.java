@@ -13,11 +13,19 @@ public interface ProductoServicio {
     int actualizarProducto(int codigoProducto,ProductoDTO productoDTO) throws Exception;
     int eliminarProducto(int codigoProducto) throws Exception;
     ProductoGetDTO obtenerProducto(int codigoProducto) throws Exception;
+
+    int agregarCarrito(int codigoProducto)throws Exception;
+
+    int agregarFavorito (int codigoUsuario, int codigoProducto) throws Exception;
+
+    int eliminarFavorito(int codigoUsuario, int codigoProducto) throws Exception;
     List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario) throws Exception;
     List<ProductoGetDTO> listarProductosCategoria(Categoria categoria) throws Exception;//Es una enumeracion
     List<ProductoGetDTO> listarProductosEstado(Estado estado) throws Exception;
     List<ProductoGetDTO> listarProductoNombre(String nombre) throws Exception;
     List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
     List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception;
+
+    List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario)throws Exception;//listar los productos que el usuario publica
 
 }

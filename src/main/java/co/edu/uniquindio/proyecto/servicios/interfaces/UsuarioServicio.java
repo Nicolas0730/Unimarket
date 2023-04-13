@@ -12,6 +12,7 @@ public interface UsuarioServicio {
 
     int eliminarUsuario(int codigoUsuario) throws Exception; //Retorna 1 si lo borró, 0 de lo contrario
 
+
     UsuarioGetDTO obtenerUsuario(int codigoUsuario) throws Exception;
 
 
