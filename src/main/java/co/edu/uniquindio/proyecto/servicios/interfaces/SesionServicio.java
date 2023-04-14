@@ -7,7 +7,7 @@ import co.edu.uniquindio.proyecto.model.Usuario;
 //Debe ser util tanto para usuarios como para el admin
 public interface SesionServicio {
 
-    TokenDTO login(SesionDTO sesionDTO); //El token será agregado automaticamente por el servidor
+    TokenDTO login(SesionDTO dto); //El token será agregado automaticamente por el servidor
 
     void logout(int codigoUsuario);
 

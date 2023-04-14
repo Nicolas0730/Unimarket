@@ -16,6 +16,7 @@ public class UsuarioServicioTest {
     @Test
     public void registrarUsuarioTest(){
 
+<<<<<<< HEAD
         try {
             Usuario usuario=new Usuario();
             usuario.setNombre("Juan");
@@ -38,5 +39,12 @@ public class UsuarioServicioTest {
 //            e.printStackTrace();
 //        }
 >>>>>>> ramaPrueba
+=======
+//        try {
+//            UsuarioDTO usuarioDTO = new UsuarioDTO(nombre:"AA", email:"fss@gfdfd", password:"0000000",)
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+>>>>>>> 6073593cd537f092187fa2b6f6e7dd66327fe2c2
     }
 
