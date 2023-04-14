@@ -1,5 +1,8 @@
 package co.edu.uniquindio.proyecto.seguridad.modelo;
 
+import co.edu.uniquindio.proyecto.model.Administrador;
+import co.edu.uniquindio.proyecto.model.Persona;
+import co.edu.uniquindio.proyecto.model.Usuario;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -15,10 +18,10 @@ public class UserDetailsImpl implements UserDetails {
         List<GrantedAuthority> authorities = new ArrayList<>();
         if(user instanceof Usuario){
             authorities.add( new SimpleGrantedAuthority("CLIENTE") );
-        }else if(user instanceof Moderador){
-            authorities.add( new SimpleGrantedAuthority("MODERADOR") );
+        }else if(user instanceof Administrador){
+            authorities.add( new SimpleGrantedAuthority("ADMINISTRADOR") );
         }
-        return new UserDetailsImpl(user.getCorreo(), user.getPassword(), authorities);
+        return new UserDetailsImpl(user.getEmail(), user.getPassword(), authorities);
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

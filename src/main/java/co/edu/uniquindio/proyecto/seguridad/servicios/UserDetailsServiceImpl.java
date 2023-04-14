@@ -1,8 +1,8 @@
 package co.edu.uniquindio.proyecto.seguridad.servicios;
 
-import co.edu.uniquindio.proyecto.modelo.Moderador;
-import co.edu.uniquindio.proyecto.modelo.Usuario;
-import co.edu.uniquindio.proyecto.repositorios.ModeradorRepo;
+import co.edu.uniquindio.proyecto.model.Administrador;
+import co.edu.uniquindio.proyecto.model.Usuario;
+import co.edu.uniquindio.proyecto.repositorios.AdministradorRepo;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.seguridad.modelo.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UsuarioRepo clienteRepo;
     @Autowired
-    private ModeradorRepo adminRepo;
+    private AdministradorRepo adminRepo;
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Usuario> cliente = clienteRepo.findByEmail(email);
         if(cliente.isEmpty()){
-            Optional<Moderador> admin = adminRepo.findByEmail(email);
+            Optional<Administrador> admin = adminRepo.findByEmail(email);
             if(admin.isEmpty())
                 throw new UsernameNotFoundException("El usuario no existe");
             return UserDetailsImpl.build(admin.get());

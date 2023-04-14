@@ -29,8 +29,7 @@ public class JwtService {
     private String buildToken(Map<String, Object> extraClaims, UserDetails userDetails, long
             expiration) {
         List<String> roles =
-                userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.to
-                        List());
+                userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
         extraClaims.put("roles", roles);
         return Jwts
                 .builder()
