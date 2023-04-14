@@ -9,7 +9,6 @@ import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -66,7 +65,7 @@ public class Producto implements Serializable {
     @ManyToMany(mappedBy = "productosFav")
     private List<Usuario> usuarios; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
 
-//    @ElementCollection?????????
+    @ElementCollection //26/03 activé el element collection 11:07 pm
 //    @Column(nullable = false)
     private List<Categoria> categoria; //@ENUM    1 producto Tiene 1 categoría
 
@@ -78,4 +77,5 @@ public class Producto implements Serializable {
 
     @ManyToOne() //Producto no depende de detalle compra
     private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra
+
 }
