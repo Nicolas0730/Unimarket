@@ -41,8 +41,7 @@ public class ProductoGetDTO {
     // private Estado activo; ------ Faltan organizar estas 3, porque el estado activo
     // y las otras dos menos jejeje :3
 //    private List<String> imagenes;
-//    public List<Categoria> categorias;
-
+//     private  List<Categoria> categorias;
 
 
 
