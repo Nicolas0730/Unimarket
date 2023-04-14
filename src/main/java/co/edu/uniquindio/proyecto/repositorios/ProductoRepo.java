@@ -32,4 +32,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
     @Query ("select p from Producto p where p.vendedor.codigo = :codigoUsuario")
     List<Producto> listarProductosUsuario (int codigoUsuario);
+
+
+    // Viendo si funciona
 }
