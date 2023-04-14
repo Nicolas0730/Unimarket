@@ -4,6 +4,11 @@ plugins {
     id 'java'
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 group 'co.edu.uniquindio.proyecto'
 version '1.0-SNAPSHOT'
 description 'Breve descripción del proyecto'
@@ -35,6 +40,10 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //Se agregaron porque no se reconocía jakarta en la clase JwtAuthenticationFilter
+    implementation 'jakarta.platform:jakarta.jakartaee-api:9.1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
 
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'

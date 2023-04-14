@@ -1,6 +1,5 @@
 package co.edu.uniquindio.proyecto.seguridad;
 
-import co.edu.uniquindio.proyecto.config;
 import co.edu.uniquindio.proyecto.seguridad.config.JwtAuthenticationEntryPoint;
 import co.edu.uniquindio.proyecto.seguridad.config.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
@@ -31,8 +30,7 @@ public class WebSecurityConfig {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authenticationProvider(authenticationProvider);
 
-        //No entiendo porqué da error el parámetro UsernamePasswordAuthenticationFilter
-        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY);//jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);//jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
 
