@@ -22,15 +22,14 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     @Query("SELECT p FROM Producto p WHERE p.nombre like concat('%', :nombre ,'%')  and p.estado = co.edu.uniquindio.proyecto.model.Estado.APROBADO")
     List<Producto> listarProductoNombre (String nombre );
 
-    @Query ("select p from Producto p where p.categoria = co.edu.uniquindio.proyecto.model.Categoria ")
+    @Query ("select p from Producto p where :categoria member of p.categoria")
     List <Producto> listarProductosCategoria (Categoria categoria);
 
-//    @Query ("select p from Producto p where p.categoria = :categoria MEMBER OF p.categoria")
-//    List<Producto> listarProductosCategoria (Categoria categoria);
 
-    @Query ("select p from Producto p where p.estado = co.edu.uniquindio.proyecto.model.Estado.APROBADO")
+
+    @Query ("select p from Producto p where p.estado = :estado")
     List<Producto> listarProductosEstado (Estado estado);
 
-//    @Query ("select p from Producto p where p.vendedor.codigo = :codigoUsuario")
-//    List<Producto> listarProductosUsuario (int codigoUsuario);
+    @Query ("select p from Producto p where p.vendedor.codigo = :codigoUsuario")
+    List<Producto> listarProductosUsuario (int codigoUsuario);
 }
