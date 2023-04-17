@@ -4,7 +4,6 @@ import co.edu.uniquindio.proyecto.dto.SesionDTO;
 import co.edu.uniquindio.proyecto.dto.TokenDTO;
 import co.edu.uniquindio.proyecto.seguridad.modelo.UserDetailsImpl;
 import co.edu.uniquindio.proyecto.seguridad.servicios.JwtService;
-import co.edu.uniquindio.proyecto.servicios.interfaces.SesionServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

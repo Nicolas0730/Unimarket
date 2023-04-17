@@ -13,6 +13,10 @@ import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+<<<<<<< HEAD
+import jakarta.validation.constraints.PositiveOrZero;
+=======
+>>>>>>> 1a86a1cf6c9861c1ec78458cf3401c68c8881762
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,6 +37,13 @@ public class ProductoDTO {
     @NotNull
     @Length(min=1,max = 300,message = "La descripción debe tener máximo 300 caracteres.")
     private String descripcion;
+<<<<<<< HEAD
+    @PositiveOrZero //las unidades no pueden ser negativas
+    private int unidades;
+    @PositiveOrZero
+    private float precio;
+    @PositiveOrZero
+=======
 
     @Column(nullable = false)
     @Positive
@@ -41,6 +52,7 @@ public class ProductoDTO {
     @Positive
     @Column(nullable = false)
     private double precio;
+>>>>>>> 1a86a1cf6c9861c1ec78458cf3401c68c8881762
     private int codigoVendedor;
 
     //Cómo parametrizo una lista ?
