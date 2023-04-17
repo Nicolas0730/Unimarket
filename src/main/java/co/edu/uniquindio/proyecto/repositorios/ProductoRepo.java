@@ -25,10 +25,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     @Query ("select p from Producto p where :categoria member of p.categoria")
     List <Producto> listarProductosCategoria (Categoria categoria);
 
-<<<<<<< HEAD
-    @Query("select p from Producto p where p.nombre like concat( '%', :nombre, '%' ) ")
-    List<Producto> listarProductosNombre(String nombre);
-=======
+
 
 
     @Query ("select p from Producto p where p.estado = :estado")
@@ -39,5 +36,5 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
 
     // Viendo si funciona otra vez
->>>>>>> 1a86a1cf6c9861c1ec78458cf3401c68c8881762
+
 }
