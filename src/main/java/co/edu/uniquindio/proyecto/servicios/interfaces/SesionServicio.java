@@ -9,4 +9,10 @@ public interface SesionServicio {
     TokenDTO login(SesionDTO sesionDTO); //El token será agregado automaticamente por el servidor
 
     void logout(int codigoUsuario);
+
+
+    void finSesion ( int codigoUsuario);
+
+
+
 }

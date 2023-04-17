@@ -1,17 +1,14 @@
 package co.edu.uniquindio.proyecto.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -29,6 +26,7 @@ public class Producto implements Serializable {
     private int codigo;
 
     @Column (nullable = false)
+    @NotNull
     @NotBlank (message = "El nombre del producto es obligatorio")
     @Length(max = 100)
     private String nombre;
@@ -48,7 +46,12 @@ public class Producto implements Serializable {
 
     @Future
     @Column(nullable = false)
-    private Date fechaLimiteProducto;
+    private LocalDateTime fechaLimiteProducto;
+
+    @Column (nullable = false)
+    private LocalDateTime fechaPublicacion;
+
+
 
     //-------------------------------- Relaciones -------------------------------
 
@@ -57,14 +60,14 @@ public class Producto implements Serializable {
 
     //    @ElementCollection?????????
     //@Column(nullable = false)
-    private estadoPublicacion estado; //@Enum 1 producto tiene 1 estado
+    private Estado estado; //@Enum 1 producto tiene 1 estado
 
     @ManyToMany(mappedBy = "productosFav")
-    private List<Usuario> usuarioss; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
+    private List<Usuario> usuarios; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
 
-//    @ElementCollection?????????
+    @ElementCollection //26/03 activé el element collection 11:07 pm
 //    @Column(nullable = false)
-    private Categoria categoria; //@ENUM    1 producto Tiene 1 categoría
+    private List<Categoria> categoria; //@ENUM    1 producto Tiene 1 categoría
 
     @OneToMany(mappedBy = "codigoProducto") //Un producto no depende de un comentario
     private List<Comentario> comentarios; // Un producto tiene muchos comentarios
@@ -74,4 +77,5 @@ public class Producto implements Serializable {
 
     @ManyToOne() //Producto no depende de detalle compra
     private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra
+
 }
