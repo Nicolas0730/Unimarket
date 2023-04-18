@@ -60,6 +60,11 @@ public class ProductoServicioImpl implements ProductoServicio {
     }
 
     @Override
+    public int agregarCarrito(int codigoProducto) throws Exception {
+        return 0;
+    }
+
+    @Override
     public int agregarFavorito(int codigoUsuario, int codigoProducto) throws Exception {
         return 0;
     }
@@ -108,6 +113,11 @@ public class ProductoServicioImpl implements ProductoServicio {
         return null;
     }
 
+    @Override
+    public List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario) throws Exception {
+        return null;
+    }
+
     //falta terminar el convertir y mirar los mockups
     private ProductoGetDTO convertir ( Producto producto){
 
@@ -119,7 +129,7 @@ public class ProductoServicioImpl implements ProductoServicio {
                 producto.getPrecio(),
                 producto.getVendedor().getCodigo(),
                 producto.getFechaLimiteProducto(),
-                producto.getCategoria().get(),
+                producto.getCategoria(),
                 producto.getComentarios()
 
         );
