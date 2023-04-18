@@ -28,6 +28,7 @@ dependencies {
      gestión de base de datos, que para nuestro caso es MySQL.
      */
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     runtimeOnly 'mysql:mysql-connector-java'
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'

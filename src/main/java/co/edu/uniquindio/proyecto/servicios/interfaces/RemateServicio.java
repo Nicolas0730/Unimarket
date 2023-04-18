@@ -2,7 +2,7 @@ package co.edu.uniquindio.proyecto.servicios.interfaces;
 
 import co.edu.uniquindio.proyecto.dto.ProductoGetDTO;
 
-public interface Remate {
+public interface RemateServicio {
     ProductoGetDTO aplicarRemate(int codigoProducto, int codigoUsuario);
 
     ProductoGetDTO actualizarRemate(int codigoProducto, int codigoUsuario);
