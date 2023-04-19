@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.servicios.implementacion;
 
+<<<<<<< HEAD
 import co.edu.uniquindio.proyecto.dto.CompraDTO;
 import co.edu.uniquindio.proyecto.dto.CompraGetDTO;
 import co.edu.uniquindio.proyecto.model.Compra;
@@ -43,3 +44,14 @@ public class CompraServicioImpl implements CompraServicio {
         return null;
     }
 }
+=======
+public class CompraServicioImpl {
+    int crearCompra(CompraDTO compraDTO);
+
+    List<CompraGetDTO> listarCompras(int codigoUsuario);
+
+    CompraGetDTO obtenerCompra(int codigoCompra);
+
+
+}
+>>>>>>> ramaSebastian

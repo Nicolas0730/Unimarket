@@ -1,43 +1,44 @@
 package co.edu.uniquindio.proyecto.dto;
 
+import co.edu.uniquindio.proyecto.model.Imagen;
 import co.edu.uniquindio.proyecto.model.Categoria;
-import co.edu.uniquindio.proyecto.model.Estado;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
-//Está hecho para guardar i
+
 @AllArgsConstructor
 @Getter
 @Setter
-public class ProductoDTO {
+public class ProductoDTO
+{
 
-    @NotNull
     @NotBlank
-    @Length(max = 100)
+    @NotNull
+    @Length(max = 150, message = "El nombre debe tener máximo 150 caracteres")
     private String nombre;
 
+    @NotBlank
     @NotNull
-    @Length(min=1,max = 300,message = "La descripción debe tener máximo 300 caracteres.")
+    @Length(max = 300, message = "La descripcion debe tener máximo 300 caracteres")
     private String descripcion;
 
-    @Positive
+    @PositiveOrZero
     private int unidades;
 
+    @PositiveOrZero
+    private float precio;
+
     @Positive
-    private double precio;
-    private int codigoVendedor;
+    private int codigoUsuario;
 
-    //Cómo parametrizo una lista ?
-    private List<String> imagenes;
+    private List<Imagen> imagenes;
+
     private List<Categoria> categorias;
-
-
-
-
 }

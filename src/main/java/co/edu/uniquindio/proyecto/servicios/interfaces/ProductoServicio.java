@@ -7,6 +7,8 @@ import co.edu.uniquindio.proyecto.model.Estado;
 
 import java.util.List;
 
+
+
 public interface ProductoServicio {
 
     int crearProducto(ProductoDTO productoDTO) throws Exception;

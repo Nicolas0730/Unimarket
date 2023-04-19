@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.Length;
 @Getter
 @Setter
 public class UsuarioDTO {
+
 //    private String codigo;
     @NotNull
     @NotBlank
@@ -25,7 +26,11 @@ public class UsuarioDTO {
     @NotNull(message = "La contraseña no puede ser null")
 //    @Pattern(regexp = "[L-_.*]1-40") //Valida una estructura mediante una expresión regular indicada
     private String pass;
+    @Length(max = 100, message = "La dirección debe tener máximo 100 caracteres")
     private String direccion;
+
+    @PositiveOrZero
+    @Length(max = 12, message = "El teléfono debe tener máximo 12 caracteres")
     private String telefono;
     private String usuario;
 

@@ -4,6 +4,7 @@ import co.edu.uniquindio.proyecto.dto.ProductoDTO;
 import co.edu.uniquindio.proyecto.dto.ProductoGetDTO;
 import co.edu.uniquindio.proyecto.dto.UsuarioDTO;
 
+
 public interface ModeradorServicio {
 
     ProductoGetDTO autorizarProductoDto(ProductoDTO productoDTO) throws Exception;

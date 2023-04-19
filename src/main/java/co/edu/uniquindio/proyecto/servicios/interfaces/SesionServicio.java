@@ -2,7 +2,6 @@ package co.edu.uniquindio.proyecto.servicios.interfaces;
 
 import co.edu.uniquindio.proyecto.dto.SesionDTO;
 import co.edu.uniquindio.proyecto.dto.TokenDTO;
-import co.edu.uniquindio.proyecto.model.Usuario;
 
 //Debe ser util tanto para usuarios como para el admin
 public interface SesionServicio {

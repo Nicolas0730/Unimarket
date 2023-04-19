@@ -29,9 +29,6 @@ public class ProductoGetDTO {
 
     private int codigoVendedor;
 
-
-
-
     private LocalDateTime fechaLimite;
 
 
