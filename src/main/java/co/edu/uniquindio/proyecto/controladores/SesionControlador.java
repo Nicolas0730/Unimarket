@@ -23,4 +23,6 @@ public class SesionControlador {
 
     //no se
     void finSesion ( int codigoUsuario);
+
+    String enviarEmail(String asunto,String contenido, String destinatario) throws Exception;// envia el email para recuperar contrasea
 }

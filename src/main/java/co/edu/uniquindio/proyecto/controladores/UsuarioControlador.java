@@ -1,10 +1,10 @@
 package co.edu.uniquindio.proyecto.controladores;
 
-import co.edu.uniquindio.Unimarket.dto.MensajeDTO;
-import co.edu.uniquindio.Unimarket.dto.UsuarioDTO;
-import co.edu.uniquindio.Unimarket.dto.UsuarioGetDTO;
-import co.edu.uniquindio.Unimarket.modelo.Usuario;
-import co.edu.uniquindio.Unimarket.servicios.interfaces.UsuarioServicio;
+import co.edu.uniquindio.proyecto.dto.MensajeDTO;
+import co.edu.uniquindio.proyecto.dto.UsuarioDTO;
+import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
+import co.edu.uniquindio.proyecto.model.Usuario;
+import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +29,7 @@ public class UsuarioControlador {
 
     @DeleteMapping("/eliminar/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> eliminiarUsuario(@PathVariable int codigoUsuario) throws Exception{
-        usuarioServicio.eliminiarUsuario(codigoUsuario);
+        usuarioServicio .eliminiarUsuario(codigoUsuario);
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, "Usuario eliminado correctamente") );
     }
 

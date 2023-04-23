@@ -35,6 +35,7 @@ public class CompraControlador {
         CompraGetDTO obtenerCompra(int codigoCompra);
 
         //preguntar cual obtener compra dejar
+        String emailCompra(String emailUsuarioVendedor, String emailUsuarioComprador, int codigoProducto);
 
 
 }
