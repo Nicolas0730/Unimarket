@@ -12,10 +12,16 @@ public interface UsuarioServicio {
 
     int eliminarUsuario(int codigoUsuario) throws Exception; //Retorna 1 si lo borró, 0 de lo contrario
 
+
     UsuarioGetDTO obtenerUsuario(int codigoUsuario) throws Exception;
 
 
     //Dado un codigo,   retorna la lista de los favoritos. O dado un codigo, retorna sus productos. O dado un codigo retorna sus compras
 
     public Usuario obtener(int codigoUsuario) throws Exception;
+
+
+
+
+
 }

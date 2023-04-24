@@ -6,15 +6,12 @@ import co.edu.uniquindio.proyecto.model.Categoria;
 import co.edu.uniquindio.proyecto.model.Estado;
 import co.edu.uniquindio.proyecto.model.Producto;
 import co.edu.uniquindio.proyecto.repositorios.ProductoRepo;
-import co.edu.uniquindio.proyecto.servicios.interfaces.ProductoServicio;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
