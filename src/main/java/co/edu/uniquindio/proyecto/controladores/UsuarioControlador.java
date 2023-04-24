@@ -46,7 +46,7 @@ public class UsuarioControlador {
         usuarioServicio.actualizarUsuario(codigo,cliente);
         return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED,false,"Actualizado correctamente"));
     }
-    @PostMapping(/actualizar/{"codigo"})
+    @PostMapping("/actualizar/{codigo}")
     public ResponseEntity<MensajeDTO> actualizar(@PathVariable int codigo, @Valid @RequestBody UsuarioDTO cliente) throws Exception {
         usuarioServicio.actualizarUsuario(codigo,cliente);
         return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED,false,"Actualizado correctamente"));
