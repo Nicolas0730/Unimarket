@@ -4,6 +4,8 @@ import co.edu.uniquindio.proyecto.dto.SesionDTO;
 import co.edu.uniquindio.proyecto.dto.TokenDTO;
 import co.edu.uniquindio.proyecto.seguridad.modelo.UserDetailsImpl;
 import co.edu.uniquindio.proyecto.seguridad.servicios.JwtService;
+import co.edu.uniquindio.proyecto.servicios.interfaces.SesionServicio;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class SesionServicioImpl implements SesionServicio {
 
     @Autowired private final JwtService jwtService;
@@ -35,7 +38,7 @@ public class SesionServicioImpl implements SesionServicio {
     }
 
     @Override
-    public void finSesion() {
+    public void finSesion(int codigoUsuario) {
 
     }
 

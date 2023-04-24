@@ -2,7 +2,9 @@ package co.edu.uniquindio.proyecto.servicios.implementacion;
 
 import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.servicios.interfaces.Domicilio;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DomicilioServicioImpl implements Domicilio {
     @Override
     public UsuarioGetDTO registrarDireccion(int codigoUsuario) {

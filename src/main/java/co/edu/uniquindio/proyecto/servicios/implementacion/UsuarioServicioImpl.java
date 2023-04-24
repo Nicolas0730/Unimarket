@@ -8,13 +8,18 @@ import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.print.AttributeException;
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class UsuarioServicioImpl implements UsuarioServicio {
+
+    @Autowired
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     private UsuarioRepo usuarioRepo;
@@ -127,6 +132,23 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 //        UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNombre(),usuario.getEmail(),usuario.getTelefono(),usuario.getPassword(),usuario.getTelefono());
 //
 //        return usuarioDTO;
+//    }
+
+    /**
+     * No se como arreglar este método 24/04/2023
+     */
+//    @Override
+//    public int registrarCliente(ClientePostDTO cliente) throws Exception {
+//        if(!estaDisponible(c.getEmail())){
+//            throw new AttributeException("El correo "+c.getEmail()+" ya está en uso");
+//        }
+//        Cliente cliente = new Cliente();
+//        cliente.setNombre( clienteDTO.getNombre() );
+//        cliente.setEmail( clienteDTO.getEmail() );
+//        cliente.setDireccion( clienteDTO.getDireccion() );
+//        cliente.setTelefono( clienteDTO.getTelefono() );
+//        cliente.setPassword( passwordEncoder.encode(clienteDTO.getPassword()) );
+//        return clienteRepo.save( cliente ).getCodigo();
 //    }
 
 
