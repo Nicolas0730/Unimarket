@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.controladores;
+package co.edu.uniquindio.proyecto.Controladores;
 
 import co.edu.uniquindio.proyecto.dto.CompraDTO;
 import co.edu.uniquindio.proyecto.dto.CompraGetDTO;

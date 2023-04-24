@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.controladores;
+package co.edu.uniquindio.proyecto.Controladores;
 
 import co.edu.uniquindio.proyecto.dto.ProductoDTO;
 import co.edu.uniquindio.proyecto.dto.ProductoGetDTO;
@@ -13,10 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-@RestController
-@RequestMapping("api/productos")
-@AllArgsConstructor
-public class ProductoControlador {
+//@RestController
+//@RequestMapping("api/productos")
+//@AllArgsConstructor
+//public class ProductoControlador {
 //    @Autowired
 //    private final ProductoServicio.productoServicio;
 //
@@ -62,6 +62,6 @@ public class ProductoControlador {
 //
 //    @GetMapping("/lista")
 //    List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario)throws Exception;//listar los productos que el usuario publica
-
+//
 
 }
