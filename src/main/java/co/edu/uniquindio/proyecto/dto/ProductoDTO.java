@@ -46,7 +46,4 @@ public class ProductoDTO {
 
     private Estado estado;
 
-
-
-
 }
