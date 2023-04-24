@@ -4,9 +4,17 @@ import co.edu.uniquindio.proyecto.dto.ProductoDTO;
 import co.edu.uniquindio.proyecto.dto.ProductoGetDTO;
 import co.edu.uniquindio.proyecto.model.Categoria;
 import co.edu.uniquindio.proyecto.model.Estado;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
+
+
+@RestController
+@RequestMapping("/api/producto")
 
 
 public interface ProductoServicio {
