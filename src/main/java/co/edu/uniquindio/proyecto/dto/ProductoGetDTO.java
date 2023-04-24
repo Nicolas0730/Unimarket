@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -33,6 +34,8 @@ public class ProductoGetDTO {
 
     private List<Imagen> imagenes;
     private List<Categoria> categorias;
+
+     private LocalDateTime fechaLimite;
 
 
 

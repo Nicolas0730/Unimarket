@@ -34,8 +34,8 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
          producto.setImagenesProducto(productoDTO.getImagenes());
        // producto.setEstado(productoDTO.getEstado());
-
           producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
+
 
 
         return productoRepo.save(producto).getCodigo();
@@ -94,27 +94,32 @@ public class ProductoServicioImpl implements ProductoServicio {
         List<Producto> productos = productoRepo.listarProductoNombre(nombre);
         List<ProductoGetDTO> respuesta = new ArrayList<>();
 
+
         for (Producto p : productos) {
             respuesta.add(convertir(p));
 
+            }
+
+            return respuesta;
         }
 
-        return respuesta;
-    }
-    private ProductoGetDTO convertir (Producto producto){
-        ProductoGetDTO productoGetDTO = new ProductoGetDTO(
-                producto.getCodigo(),
-                producto.getNombre(),
-                producto.getDescripcion(),
-                producto.getUnidades(),
-                producto.getPrecio(),
-                producto.getVendedor().getCodigo(),
-                producto.getImagenesProducto(),
-                producto.getCategoria()
-        );
-        return productoGetDTO;
 
-    }
+        private ProductoGetDTO convertir (Producto producto){
+            ProductoGetDTO productoGetDTO = new ProductoGetDTO(
+                    producto.getCodigo(),
+                    producto.getNombre(),
+                    producto.getDescripcion(),
+                    producto.getUnidades(),
+                    producto.getPrecio(),
+                    producto.getVendedor().getCodigo(),
+                    producto.getImagenesProducto(),
+                    producto.getCategoria(),
+                    producto.getFechaLimiteProducto()
+            );
+            return productoGetDTO;
+
+
+        }
 
 
     @Override
