@@ -68,6 +68,16 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return usuario.get();
     }
 
+    @Override
+    public UsuarioGetDTO convertiraUsuario(int codigoUsuario) throws Exception {
+        return null;
+    }
+
+    @Override
+    public Usuario convertirUsuario(int codigoUsuario) throws Exception {
+        return null;
+    }
+
     //Funciona internamente pero no tiene que ver con la API
     private void validarExiste(int codigoUsuario) throws Exception {
         boolean existe = usuarioRepo.existsById(codigoUsuario);
