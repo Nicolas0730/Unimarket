@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/domicilio")
 @AllArgsConstructor
 public class DomicilioControlador {
-    private final DomicilioServicio.domicilioServcio;
+//    private final DomicilioServicio.domicilioServcio;
 
-    @PutMapping("/registrar")
-    UsuarioGetDTO registrarDireccion(int codigoUsuario);//agregar direccion de domicilio, puede ser diferent al del usuario en el dto
-
-    @GetMapping("/enviar")
-    UsuarioGetDTO enviarDomicilio(String direccion, int codigoUsuario);
+//    @PutMapping("/registrar")
+//    UsuarioGetDTO registrarDireccion(int codigoUsuario);//agregar direccion de domicilio, puede ser diferent al del usuario en el dto
+//
+//    @GetMapping("/enviar")
+//    UsuarioGetDTO enviarDomicilio(String direccion, int codigoUsuario);
 }

@@ -20,9 +20,7 @@ public interface UsuarioServicio {
 
     public Usuario obtener(int codigoUsuario) throws Exception;
 
-    UsuarioGetDTO convertiraUsuario(int codigoUsuario)throws Exception;
 
-    public  Usuario convertirUsuario(int codigoUsuario)throws Exception;
 
 
 

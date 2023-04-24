@@ -36,9 +36,12 @@ public class ProductoDTO
     private float precio;
 
     @Positive
-    private int codigoUsuario;
+    private int codigoVendedor;
 
     private List<Imagen> imagenes;
 
     private List<Categoria> categorias;
+
+
+
 }

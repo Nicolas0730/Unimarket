@@ -32,35 +32,27 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setFechaPublicacion(LocalDateTime.now());
         producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
-<<<<<<< HEAD
-        producto.setImagenesProducto(productoDTO.getImagenes());
-        producto.setEstado(Estado.SIN_REVISAR);
-        producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
-=======
-        //  producto.setImagenesProducto(productoDTO.getImagenes());
-        producto.setEstado(productoDTO.getEstado());
+         producto.setImagenesProducto(productoDTO.getImagenes());
+       // producto.setEstado(productoDTO.getEstado());
 
-        //      producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
+          producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
 
->>>>>>> ramaSebastian
 
         return productoRepo.save(producto).getCodigo();
 
     }
-<<<<<<< HEAD
-
     @Override
-    public int actualizarProducto(int codigoProducto, ProductoDTO productoDTO) {
+    public int actualizarProducto ( int codigoProducto, ProductoDTO productoDTO) throws Exception {
         return 0;
     }
 
     @Override
-    public int eliminarProducto(int codigoProducto) {
+    public int eliminarProducto ( int codigoProducto) throws Exception {
         return 0;
     }
 
     @Override
-    public ProductoGetDTO obtenerProducto(int codigoProducto) {
+    public ProductoGetDTO obtenerProducto ( int codigoProducto) throws Exception {
         return null;
     }
 
@@ -79,91 +71,37 @@ public class ProductoServicioImpl implements ProductoServicio {
         return 0;
     }
 
-
     @Override
-    public List<ProductoGetDTO> listarProductosUsuario(int codigoUsuario) {
+    public List<ProductoGetDTO> listarProductosUsuario ( int codigoUsuario) throws Exception {
         return null;
     }
 
     @Override
-    public List<ProductoGetDTO> listarProductosCategoria(Categoria categoria) {
+    public List<ProductoGetDTO> listarProductosCategoria (Categoria categoria) throws Exception {
         return null;
     }
-
-    @Override
-    public List<ProductoGetDTO> listarProductosEstado(Estado estado) {
-        return null;
-    }
-
-    @Override
-    public List<ProductoGetDTO> listarProductoNombre(String nombre) {
-
-        List <Producto> productos = productoRepo.listarProductoNombre(nombre);
-        List <ProductoGetDTO> respuesta = new ArrayList<>();
-
-        for ( Producto p : productos){
-            respuesta.add(convertir(p));
-=======
-        @Override
-        public int actualizarProducto ( int codigoProducto, ProductoDTO productoDTO) throws Exception {
-            return 0;
->>>>>>> ramaSebastian
-        }
-
-        @Override
-        public int eliminarProducto ( int codigoProducto) throws Exception {
-            return 0;
-        }
-
-        @Override
-        public ProductoGetDTO obtenerProducto ( int codigoProducto) throws Exception {
-            return null;
-        }
-
-    @Override
-    public int agregarCarrito(int codigoProducto) throws Exception {
-        return 0;
-    }
-
-    @Override
-    public int agregarFavorito(int codigoUsuario, int codigoProducto) throws Exception {
-        return 0;
-    }
-
-    @Override
-    public int eliminarFavorito(int codigoUsuario, int codigoProducto) throws Exception {
-        return 0;
-    }
-
-    @Override
-        public List<ProductoGetDTO> listarProductosUsuario ( int codigoUsuario) throws Exception {
-            return null;
-        }
-
-        @Override
-        public List<ProductoGetDTO> listarProductosCategoria (Categoria categoria) throws Exception {
-            return null;
-        }
 
     @Override
     public List<ProductoGetDTO> listarProductosEstado(Estado estado) throws Exception {
         return null;
     }
 
-    @Override
-    public List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception {
-        return null;
+
+
+
+    public List<ProductoGetDTO> listarProductoNombre (String nombre) throws Exception{
+
+        List<Producto> productos = productoRepo.listarProductoNombre(nombre);
+        List<ProductoGetDTO> respuesta = new ArrayList<>();
+
+        for (Producto p : productos) {
+            respuesta.add(convertir(p));
+
+        }
+
+        return respuesta;
     }
-
-    @Override
-    public List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario) throws Exception {
-        return null;
-    }
-
-<<<<<<< HEAD
-    //falta terminar el convertir y mirar los mockups
-    private ProductoGetDTO convertir ( Producto producto){
-
+    private ProductoGetDTO convertir (Producto producto){
         ProductoGetDTO productoGetDTO = new ProductoGetDTO(
                 producto.getCodigo(),
                 producto.getNombre(),
@@ -171,60 +109,26 @@ public class ProductoServicioImpl implements ProductoServicio {
                 producto.getUnidades(),
                 producto.getPrecio(),
                 producto.getVendedor().getCodigo(),
-                producto.getFechaLimiteProducto(),
-                producto.getCategoria(),
-                producto.getComentarios()
-=======
+                producto.getImagenesProducto(),
+                producto.getCategoria()
+        );
+        return productoGetDTO;
 
-        public List<ProductoGetDTO> listarProductoNombre (String nombre) throws Exception{
-
-            List<Producto> productos = productoRepo.listarProductoNombre(nombre);
-            List<ProductoGetDTO> respuesta = new ArrayList<>();
-
-            for (Producto p : productos) {
-                respuesta.add(convertir(p));
-
-            }
-
-            return respuesta;
-        }
-        private ProductoGetDTO convertir (Producto producto){
-            ProductoGetDTO productoGetDTO = new ProductoGetDTO(
-                    producto.getCodigo(),
-                    producto.getCategoria(),
-                    producto.getFechaLimiteProducto(),
-                    producto.getNombre(),
-                    producto.getDescripcion(),
-                    producto.getUnidades(),
-                    producto.getPrecio(),
-                    producto.getVendedor().getCodigo(),
-                    producto.getImagenesProducto(),
-                    producto.getCategoria()
-            );
-            return productoGetDTO;
-
-        }
+    }
 
 
-        @Override
-        public List<ProductoGetDTO> listarProductosPrecio ( float precioMin, float precioMax) throws Exception {
-            return null;
-        }
->>>>>>> ramaSebastian
+    @Override
+    public List<ProductoGetDTO> listarProductosPrecio ( float precioMin, float precioMax) throws Exception {
+        return null;
+    }
 
     @Override
     public List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception {
         return null;
     }
-<<<<<<< HEAD
-    //@Override
-    //public List<ProductoGetDTO> listarProductosFavoritos()
-}
-=======
 
     @Override
     public List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario) throws Exception {
         return null;
     }
 }
->>>>>>> ramaSebastian

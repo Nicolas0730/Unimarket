@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class RemateControlador {
 
-    @PutMapping("/crear")
-    ProductoGetDTO aplicarRemate(int codigoProducto, int codigoUsuario);
-
-    @PutMapping("/actualizar")
-    ProductoGetDTO actualizarRemate(int codigoProducto, int codigoUsuario);
-
-    @DeleteMapping("/eliminar")
-    ProductoGetDTO eliminarRemate(int codigoProducto, int codigoUsuario);
+//    @PutMapping("/crear")
+//    ProductoGetDTO aplicarRemate(int codigoProducto, int codigoUsuario);
+//
+//    @PutMapping("/actualizar")
+//    ProductoGetDTO actualizarRemate(int codigoProducto, int codigoUsuario);
+//
+//    @DeleteMapping("/eliminar")
+//    ProductoGetDTO eliminarRemate(int codigoProducto, int codigoUsuario);
 }
