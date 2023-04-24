@@ -5,6 +5,7 @@ import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,7 +59,9 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return convertiraUsuarioaDTO(obtener(codigoUsuario));
     }
 
-    Usuario obtener(int codigoUsuario) throws Exception{
+    //Funciona internamente pero no tiene que ver con la API //    @Transactional(readOnly = true)
+
+    public Usuario obtener(int codigoUsuario) throws Exception{
         Optional<Usuario> usuario = usuarioRepo.findById(codigoUsuario); //Asegura que no exista el nullPointerException
 
         if (usuario.isEmpty()){
@@ -67,6 +70,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return usuario.get();
     }
 
+    //Funciona internamente pero no tiene que ver con la API
     private void validarExiste(int codigoUsuario) throws Exception {
         boolean existe = usuarioRepo.existsById(codigoUsuario);
         if (!existe)

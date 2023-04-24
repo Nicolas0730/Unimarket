@@ -32,6 +32,8 @@ public class UsuarioDTO {
     @PositiveOrZero
     @Length(max = 12, message = "El teléfono debe tener máximo 12 caracteres")
     private String telefono;
-    private String usuario;
+
+    //Esto va? o se maneja con el rol   17 / 04 10:40 am
+//    private String usuario;
 
 }

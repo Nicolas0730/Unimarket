@@ -31,17 +31,10 @@ public class ProductoGetDTO {
     private int codigoVendedor;
 
 
-
+    private List<Imagen> imagenes;
+    private  List<Categoria> categorias;
 
     private LocalDateTime fechaLimite;
-
-
-
-
-    // private Estado activo; ------ Faltan organizar estas 3, porque el estado activo
-    // y las otras dos menos jejeje :3
-//    private List<String> imagenes;
-//     private  List<Categoria> categorias;
 
 
 

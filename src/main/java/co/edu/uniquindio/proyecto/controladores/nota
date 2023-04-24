@@ -1,0 +1,23 @@
+http://localhost:8080/crearUsuario
+
+Todos los métodos que usen los servicios, van acompañados de un método http
+
+Método de servicio           Método http
+    Crear               -        POST
+    obtener             -         GET
+    eliminar            -        DELETE
+   actualizar           -         PUT
+
+
+Se pueden enviar datos dos formas:
+   * Por la URL
+   * Por el body
+
+   @RequestBody se le asigna a los parámetros de los métodos @RestController que son Clases DTO
+   ejemplo:  @RequestBody UsuarioDTO usuarioDTO
+
+   @PathVariable para los que no son DTO, es decir, parámetros sueltos
+   quedando así:
+
+   @PutMapping("/actualizar/{codigoUsuario}")  //{codigoUsuario} debe tener el mismo nombre que el parámetro que se llama en el método
+   int actualizarUsuario(@PathVariable int codigoUsuario, @RequestBody UsuarioDTO userDTO)
