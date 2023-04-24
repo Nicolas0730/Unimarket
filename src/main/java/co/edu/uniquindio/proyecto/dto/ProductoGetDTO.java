@@ -34,6 +34,8 @@ public class ProductoGetDTO {
      private List<Imagen> imagenes;
      private  List<Categoria> categorias;
 
+     private LocalDateTime fechaLimite;
+
 
 
 }
