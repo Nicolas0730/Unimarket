@@ -2,6 +2,7 @@ package co.edu.uniquindio.proyecto.servicios.interfaces;
 
 import co.edu.uniquindio.proyecto.dto.ComentarioDTO;
 import co.edu.uniquindio.proyecto.dto.ComentarioGetDTO;
+import co.edu.uniquindio.proyecto.model.Comentario;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ public interface ComentarioServicio {
     List<ComentarioGetDTO> listarComentario(int codigoProducto) ;//solo USUARIOS LOGUEADOS PUEDEN listar los  comentarios que tenga el producto
 
     int eliminarComentario(ComentarioDTO comentario) throws Exception;// borrar el comentario con el codigo
+
+    ComentarioGetDTO obtenerComentario(int codigoComentario) throws Exception;
 }
