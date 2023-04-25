@@ -47,8 +47,5 @@ public class ComentarioServicioImpl implements ComentarioServicio {
         return comentarioGetDTO;
     }
 
-    @Override
-    public int eliminarComentario(ComentarioDTO comentario) throws Exception {
-        return 0;
-    }
+
 }
