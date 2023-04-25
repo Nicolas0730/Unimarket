@@ -11,10 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository                            //Si es Integer?? 24/03 11:49 @N
+@Repository
 public interface ProductoRepo extends JpaRepository<Producto,Integer> {
-
-    //Consultas a la base de datos
 
     @Query("SELECT p FROM Producto p WHERE p.codigo= :codigo")
     Producto obtenerProducto (int codigo);
@@ -24,9 +22,6 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
     @Query ("select p from Producto p where :categoria member of p.categoria")
     List <Producto> listarProductosCategoria (Categoria categoria);
-
-
-
 
     @Query ("select p from Producto p where p.estado = :estado")
     List<Producto> listarProductosEstado (Estado estado);
