@@ -138,17 +138,17 @@ public class UsuarioServicioImpl implements UsuarioServicio {
      * No se como arreglar este método 24/04/2023
      */
 //    @Override
-//    public int registrarCliente(ClientePostDTO cliente) throws Exception {
+//    public int registrarCliente(UsuarioGetDTO usuarioGetDTO) throws Exception {
 //        if(!estaDisponible(c.getEmail())){
 //            throw new AttributeException("El correo "+c.getEmail()+" ya está en uso");
 //        }
-//        Cliente cliente = new Cliente();
-//        cliente.setNombre( clienteDTO.getNombre() );
-//        cliente.setEmail( clienteDTO.getEmail() );
-//        cliente.setDireccion( clienteDTO.getDireccion() );
-//        cliente.setTelefono( clienteDTO.getTelefono() );
-//        cliente.setPassword( passwordEncoder.encode(clienteDTO.getPassword()) );
-//        return clienteRepo.save( cliente ).getCodigo();
+//        Usuario usuario = new Usuario();
+//        usuario.setNombre( clienteDTO.getNombre() );
+//        usuario.setEmail( clienteDTO.getEmail() );
+//        usuario.setDireccion( clienteDTO.getDireccion() );
+//        usuario.setTelefono( clienteDTO.getTelefono() );
+//        usuario.setPassword( passwordEncoder.encode(clienteDTO.getPassword()) );
+//        return clienteRepo.save( usuario ).getCodigo();
 //    }
 
 
