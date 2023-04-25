@@ -40,7 +40,6 @@ public class SesionServicioImpl implements SesionServicio {
 
     @Override
     public void finSesion(int codigoUsuario) {
-
     }
 }
 

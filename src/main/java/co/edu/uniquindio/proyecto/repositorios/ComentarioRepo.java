@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface ComentarioRepo extends JpaRepository<Comentario,Integer> {
 
     //Necesito buscar la existencia de un comentario para algo?
-//    @Query("SELECT u from Comentario u WHERE u.codigo= :codigoComentario")
-//    Comentario buscarComentario(int codigoComentario);
+    @Query("SELECT u from Comentario u WHERE u.codigo= :codigoComentario")
+    Comentario buscarComentario(int codigoComentario);
 }

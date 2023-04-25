@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -18,7 +17,6 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
     @Autowired
     private final PasswordEncoder passwordEncoder;
-
 
     private UsuarioRepo usuarioRepo;
     //        usuarioRepo.save(); //Guardar con un insert into
@@ -73,12 +71,12 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return usuario.get();
     }
 
-    @Override
+   // @Override
     public UsuarioGetDTO convertiraUsuario(int codigoUsuario) throws Exception {
         return null;
     }
 
-    @Override
+  //  @Override
     public Usuario convertirUsuario(int codigoUsuario) throws Exception {
         return null;
     }
