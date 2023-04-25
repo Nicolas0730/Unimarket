@@ -1,18 +1,8 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
 
-import co.edu.uniquindio.proyecto.dto.ComentarioDTO;
-import co.edu.uniquindio.proyecto.dto.ComentarioGetDTO;
-import co.edu.uniquindio.proyecto.dto.MensajeDTO;
-import co.edu.uniquindio.proyecto.servicios.interfaces.ComentarioServicio;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.PublicKey;
-import java.util.List;
 @RestController
 @RequestMapping("api/comentario")
 @AllArgsConstructor

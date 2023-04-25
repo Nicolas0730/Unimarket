@@ -1,10 +1,6 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
 
-import co.edu.uniquindio.proyecto.dto.SesionDTO;
-import co.edu.uniquindio.proyecto.dto.TokenDTO;
-import co.edu.uniquindio.proyecto.servicios.interfaces.RemateServicio;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

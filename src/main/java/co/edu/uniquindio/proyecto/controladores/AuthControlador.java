@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
 
 import co.edu.uniquindio.proyecto.dto.MensajeDTO;
 import co.edu.uniquindio.proyecto.dto.SesionDTO;

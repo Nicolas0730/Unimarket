@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
 import co.edu.uniquindio.proyecto.dto.MensajeDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.print.AttributeException;
 import java.util.ArrayList;
 import java.util.List;
 @RestControllerAdvice

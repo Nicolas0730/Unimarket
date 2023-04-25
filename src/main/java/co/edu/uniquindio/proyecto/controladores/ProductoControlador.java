@@ -1,20 +1,17 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
 
 import co.edu.uniquindio.proyecto.dto.MensajeDTO;
 import co.edu.uniquindio.proyecto.dto.ProductoDTO;
 import co.edu.uniquindio.proyecto.dto.ProductoGetDTO;
 import co.edu.uniquindio.proyecto.model.Categoria;
-import co.edu.uniquindio.proyecto.model.Estado;
 
 import java.util.List;
 
 import co.edu.uniquindio.proyecto.servicios.interfaces.ProductoServicio;
-import co.edu.uniquindio.proyecto.servicios.interfaces.RemateServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
