@@ -5,26 +5,18 @@ import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.print.AttributeException;
-
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class UsuarioServicioImpl implements UsuarioServicio {
 
-
     @Autowired
     private final PasswordEncoder passwordEncoder;
-
-    @Autowired
 
     private UsuarioRepo usuarioRepo;
     //        usuarioRepo.save(); //Guardar con un insert into

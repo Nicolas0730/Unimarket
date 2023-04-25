@@ -6,9 +6,6 @@ import co.edu.uniquindio.proyecto.seguridad.modelo.UserDetailsImpl;
 import co.edu.uniquindio.proyecto.seguridad.servicios.JwtService;
 import co.edu.uniquindio.proyecto.servicios.interfaces.SesionServicio;
 import lombok.AllArgsConstructor;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -41,11 +38,9 @@ public class SesionServicioImpl implements SesionServicio {
 
     }
 
-
     @Override
     public void finSesion(int codigoUsuario) {
-
-
     }
 }
+
 
