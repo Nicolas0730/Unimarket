@@ -10,9 +10,12 @@ import co.edu.uniquindio.proyecto.servicios.interfaces.ProductoServicio;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import javax.swing.text.html.Option;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -51,9 +54,23 @@ public class ProductoServicioImpl implements ProductoServicio {
         return 0;
     }
 
+    /**
+     * Obtiene un producto dado su código y realiza su búsqueda en la BD
+     *
+     * @param codigoProducto a buscar en la BD
+     * @return ProductoGetDTO si este existe
+     * @throws Exception Si al realizar la busqueda, el producto está vacío se lanza una excepción
+     */
     @Override
     public ProductoGetDTO obtenerProducto ( int codigoProducto) throws Exception {
-        return null;
+        Optional<Producto> producto = productoRepo.findById(codigoProducto);
+
+        if (producto.isEmpty()){
+            throw new Exception("ERROR, El producto con el código "+codigoProducto+" no existe");
+        }
+        ProductoGetDTO productoGetDTO= convertir(producto.get());
+
+        return productoGetDTO;
     }
 
     @Override
