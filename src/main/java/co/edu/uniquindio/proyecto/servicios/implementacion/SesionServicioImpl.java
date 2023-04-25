@@ -6,7 +6,6 @@ import co.edu.uniquindio.proyecto.seguridad.modelo.UserDetailsImpl;
 import co.edu.uniquindio.proyecto.seguridad.servicios.JwtService;
 import co.edu.uniquindio.proyecto.servicios.interfaces.SesionServicio;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,10 +16,12 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class SesionServicioImpl implements SesionServicio {
 
-    @Autowired private final JwtService jwtService;
-    @Autowired private final AuthenticationManager authenticationManager;
 
-    @Override
+    private final JwtService jwtService;
+
+    private final AuthenticationManager authenticationManager;
+
+
     public TokenDTO login(SesionDTO sesionDTO) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(sesionDTO.getEmail(),
@@ -32,7 +33,7 @@ public class SesionServicioImpl implements SesionServicio {
         return new TokenDTO(jwtToken);
     }
 
-    @Override
+
     public void logout(int codigoUsuario) {
 
     }
@@ -41,5 +42,7 @@ public class SesionServicioImpl implements SesionServicio {
     public void finSesion(int codigoUsuario) {
 
     }
-
 }
+
+
+

@@ -12,7 +12,10 @@ public interface SesionServicio {
 
 
 
+<<<<<<< HEAD
     void finSesion ( int codigoUsuario);
+=======
+>>>>>>> ramaSebastian
 
 
 
