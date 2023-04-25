@@ -36,6 +36,4 @@ public interface ProductoServicio {
     List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
     List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception;
 
-    List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario)throws Exception;//listar los productos que el usuario publica
-
 }

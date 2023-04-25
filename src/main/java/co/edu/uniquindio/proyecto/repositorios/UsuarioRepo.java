@@ -13,7 +13,7 @@ public interface UsuarioRepo extends JpaRepository<Usuario,Integer> {
     //JPQL --> Lenguaje de consultas de persistencia de Java
 
     //Usuario es la clase, no la tabla
-    @Query("SELECT u from Usuario u WHERE u.email= :correo") // el :correo hace referencia al parámetro
+    @Query("SELECT u from Usuario u WHERE u.correo= :correo") // el :correo hace referencia al parámetro
     Usuario buscarUsuario(String correo);
 
     @Query ("SELECT u FROM Usuario u WHERE u.codigo = :codigo")
