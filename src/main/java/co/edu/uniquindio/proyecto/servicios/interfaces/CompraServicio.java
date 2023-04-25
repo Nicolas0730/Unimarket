@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CompraServicio {
 
-    Compra obtenerCompra(Integer idCompra)throws Exception;
+//    Compra obtenerCompra(Integer idCompra)throws Exception;
 
     int crearCompra(CompraDTO compraDTO);
 //se debe guardar, además del cliente y el producto (o los productos), la fecha, el total de la compra y el método de pago.
