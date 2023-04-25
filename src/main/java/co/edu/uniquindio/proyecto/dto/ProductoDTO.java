@@ -3,6 +3,8 @@ package co.edu.uniquindio.proyecto.dto;
 import co.edu.uniquindio.proyecto.model.Categoria;
 import co.edu.uniquindio.proyecto.model.Imagen;
 import co.edu.uniquindio.proyecto.model.Estado;
+import co.edu.uniquindio.proyecto.model.Imagen;
+import co.edu.uniquindio.proyecto.model.Estado;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -40,10 +42,19 @@ public class ProductoDTO {
 
     //Cómo parametrizo una lista ?
 
+
     private List<Imagen> imagenes;
+
+  //  private List<String> imagenes;
+
     private List<Categoria> categorias;
 
 
     private Estado estado;
 
+
 }
+
+
+
+

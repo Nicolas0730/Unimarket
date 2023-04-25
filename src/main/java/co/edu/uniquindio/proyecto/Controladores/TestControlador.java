@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.controladores;
+package co.edu.uniquindio.proyecto.Controladores;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
