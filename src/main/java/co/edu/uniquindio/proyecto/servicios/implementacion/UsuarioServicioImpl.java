@@ -8,12 +8,23 @@ import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import javax.print.AttributeException;
+
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class UsuarioServicioImpl implements UsuarioServicio {
 
+
+    @Autowired
+    private final PasswordEncoder passwordEncoder;
+
+    @Autowired
 
     private UsuarioRepo usuarioRepo;
     //        usuarioRepo.save(); //Guardar con un insert into
@@ -68,12 +79,12 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return usuario.get();
     }
 
-    @Override
+   // @Override
     public UsuarioGetDTO convertiraUsuario(int codigoUsuario) throws Exception {
         return null;
     }
 
-    @Override
+  //  @Override
     public Usuario convertirUsuario(int codigoUsuario) throws Exception {
         return null;
     }
@@ -127,5 +138,21 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 //        return usuarioDTO;
 //    }
 
+    /**
+     * No se como arreglar este método 24/04/2023
+     */
+//    @Override
+//    public int registrarCliente(UsuarioGetDTO usuarioGetDTO) throws Exception {
+//        if(!estaDisponible(c.getEmail())){
+//            throw new AttributeException("El correo "+c.getEmail()+" ya está en uso");
+//        }
+//        Usuario usuario = new Usuario();
+//        usuario.setNombre( clienteDTO.getNombre() );
+//        usuario.setEmail( clienteDTO.getEmail() );
+//        usuario.setDireccion( clienteDTO.getDireccion() );
+//        usuario.setTelefono( clienteDTO.getTelefono() );
+//        usuario.setPassword( passwordEncoder.encode(clienteDTO.getPassword()) );
+//        return clienteRepo.save( usuario ).getCodigo();
+//    }
 
 }

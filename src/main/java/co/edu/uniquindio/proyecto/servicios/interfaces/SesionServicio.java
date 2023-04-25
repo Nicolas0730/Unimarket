@@ -13,6 +13,9 @@ public interface SesionServicio {
 
 
 
+    void finSesion ( int codigoUsuario);
+
+
 
 
 }
