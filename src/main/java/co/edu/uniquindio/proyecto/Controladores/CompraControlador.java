@@ -2,14 +2,15 @@ package co.edu.uniquindio.proyecto.Controladores;
 
 import co.edu.uniquindio.proyecto.dto.CompraDTO;
 import co.edu.uniquindio.proyecto.dto.CompraGetDTO;
+import co.edu.uniquindio.proyecto.dto.MensajeDTO;
 import co.edu.uniquindio.proyecto.model.Compra;
 import co.edu.uniquindio.proyecto.servicios.interfaces.CompraServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,23 +20,23 @@ import java.util.List;
 public class CompraControlador {
 
         @Autowired
-        private final CompraServicio.compraServicio;
-
-        @GetMapping("/obtener")
-        Compra obtenerCompra(Integer idCompra)throws Exception;
+        private final CompraServicio compraServicio;
 
         @PutMapping("/crear")
-        int crearCompra(CompraDTO compraDTO);
+        public ResponseEntity<MensajeDTO>crearCompra(@RequestBody CompraDTO compraDTO) throws Exception{
+                return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED, false, crearCompra(compraDTO)));
+        }
         //se debe guardar, además del cliente y el producto (o los productos), la fecha, el total de la compra y el método de pago.
 
         @GetMapping("/lsita")
-        List<CompraGetDTO> listarCompras(int codigoUsuario); //listar compras dado el codigo del usuario
+        public ResponseEntity<MensajeDTO> listarCompras(@PathVariable int codigoUsuario)throws Exception{
+                return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO(HttpStatus.OK,false, listarCompras(codigoUsuario)));
+        } //listar compras dado el codigo del usuario
 
         @GetMapping("/obtener")
-        CompraGetDTO obtenerCompra(int codigoCompra);
-
-        //preguntar cual obtener compra dejar
-        String emailCompra(String emailUsuarioVendedor, String emailUsuarioComprador, int codigoProducto);
+        public ResponseEntity<MensajeDTO>obtenerCompra(@PathVariable int codigoCompra)throws Exception{
+                return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO(HttpStatus.OK,false,obtenerCompra(codigoCompra)));
+        }
 
 
 }

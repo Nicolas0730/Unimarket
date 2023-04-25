@@ -29,7 +29,7 @@ public class UsuarioControlador {
 
     @DeleteMapping("/eliminar/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> eliminiarUsuario(@PathVariable int codigoUsuario) throws Exception{
-        usuarioServicio .eliminiarUsuario(codigoUsuario);
+        usuarioServicio .eliminarUsuario(codigoUsuario);
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, "Usuario eliminado correctamente") );
     }
 
@@ -37,6 +37,7 @@ public class UsuarioControlador {
     public ResponseEntity<MensajeDTO> obtenerUsuario(@PathVariable int codigoUsuario) throws Exception{
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, usuarioServicio.obtenerUsuario(codigoUsuario)));
     }
+
 
 
 }
