@@ -14,8 +14,6 @@ import java.util.List;
 @Repository
 public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
-    //Consultas a la base de datos
-
     @Query("SELECT p FROM Producto p WHERE p.codigo= :codigo")
     Producto obtenerProducto (int codigo);
 

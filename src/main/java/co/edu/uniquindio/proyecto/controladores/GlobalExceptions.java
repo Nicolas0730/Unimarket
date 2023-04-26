@@ -10,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.print.AttributeException;
 import java.util.ArrayList;
 import java.util.List;
 @RestControllerAdvice
@@ -34,7 +35,7 @@ public class GlobalExceptions {
 //    public ResponseEntity<MensajeDTO> throwAttributeException(AttributeException e) {
 //        return ResponseEntity.badRequest().body(new MensajeDTO(HttpStatus.BAD_REQUEST, true,
 //                e.getClass()));
-//    }
+ //   }
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<MensajeDTO> validationException(MethodArgumentNotValidException ex){
         List<String> messages = new ArrayList<>();

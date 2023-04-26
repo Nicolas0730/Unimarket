@@ -8,7 +8,9 @@ import java.util.List;
 public interface RemateServicio {
     ProductoGetDTO aplicarRemate(int codigoProducto, int codigoUsuario ,float precioProducto);
 
+
     ProductoGetDTO actualizarRemate(int codigoProducto, int codigoUsuario, float precioProducto);
+
     ProductoGetDTO eliminarRemate(int codigoProducto, int codigoUsuario);
 
 

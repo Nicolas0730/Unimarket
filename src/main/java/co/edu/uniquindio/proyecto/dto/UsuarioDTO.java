@@ -34,6 +34,6 @@ public class UsuarioDTO {
     private String telefono;
 
     //Esto va? o se maneja con el rol   17 / 04 10:40 am
-//    private String usuario;
+       private String usuario;
 
 }

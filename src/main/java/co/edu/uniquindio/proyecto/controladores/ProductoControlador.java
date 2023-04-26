@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("api/productos")
+@RequestMapping("/api/productos")
 @AllArgsConstructor
 public class ProductoControlador {
     @Autowired
