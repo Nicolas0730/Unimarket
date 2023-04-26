@@ -36,6 +36,4 @@ public class UsuarioControlador {
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, usuarioServicio.obtenerUsuario(codigoUsuario)));
     }
 
-
-
 }

@@ -21,7 +21,7 @@ public class UserDetailsImpl implements UserDetails {
         }else if(user instanceof Administrador){
             authorities.add( new SimpleGrantedAuthority("ADMINISTRADOR") );
         }
-        return new UserDetailsImpl(user.getEmail(), user.getPassword(), authorities);
+        return new UserDetailsImpl(user.getCorreo(), user.getPassword(), authorities);
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

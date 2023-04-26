@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
 public interface ProductoServicio {
 
     int crearProducto(ProductoDTO productoDTO) throws Exception;
@@ -29,7 +28,5 @@ public interface ProductoServicio {
     List<ProductoGetDTO> listarProductoNombre(String nombre) throws Exception;
     List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
     List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception;
-
-    List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario)throws Exception;//listar los productos que el usuario publica
 
 }

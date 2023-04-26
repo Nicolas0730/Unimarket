@@ -42,7 +42,7 @@ public class Producto implements Serializable {
 
     @Positive
     @Column(nullable = false)
-    private double precio;
+    private float precio;
 
     @Future
     @Column(nullable = false)

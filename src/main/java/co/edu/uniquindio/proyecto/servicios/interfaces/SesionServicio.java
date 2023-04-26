@@ -10,9 +10,5 @@ public interface SesionServicio {
 
     void logout(int codigoUsuario);
 
-
-
-
-
-
+    void finSesion(int codigoUsuario);
 }

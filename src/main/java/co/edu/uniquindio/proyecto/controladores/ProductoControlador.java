@@ -59,7 +59,7 @@ public class ProductoControlador {
 
 
     @GetMapping("/lista/productosUsuario")
-     public ResponseEntity<MensajeDTO> listarProductosUsuario(@RequestBody List<ProductoGetDTO>,@PathVariable int codigoUsuario) throws Exception{
+     public ResponseEntity<MensajeDTO> listarProductosUsuario(@PathVariable int codigoUsuario) throws Exception{
         return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK, false, listarProductosUsuario(codigoUsuario)));
     }
 

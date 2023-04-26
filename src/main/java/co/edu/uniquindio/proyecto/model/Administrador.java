@@ -10,6 +10,4 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Administrador extends Persona implements Serializable {
 
-    @Id
-    private int codigo ;
 }
