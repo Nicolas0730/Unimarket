@@ -282,7 +282,7 @@ public class ProductoServicioImpl implements ProductoServicio {
 //        producto.setUsuarios(usuarioServicio.obtener(productoGetDTO.getCodigo()));
         producto.setFechaLimiteProducto(productoGetDTO.getFechaLimite());
 
-        producto.setEstado(productoGetDTO.getEstado());
+//        producto.setEstado(productoGetDTO.getEstado());
 
         return producto;
 
