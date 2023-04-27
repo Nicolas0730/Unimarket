@@ -2,6 +2,7 @@ package co.edu.uniquindio.proyecto.servicios.implementacion;
 
 import co.edu.uniquindio.proyecto.dto.UsuarioDTO;
 import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
+import co.edu.uniquindio.proyecto.model.Rol;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
@@ -31,6 +32,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
             throw new Exception("El correo "+user.getCorreo()+" ya existe!");
         }
         Usuario usuario= convertiraUsuario(user);
+        usuario.setUsuario(Rol.CLIENTE);
         return usuarioRepo.save(usuario).getCodigo();
     }
 
