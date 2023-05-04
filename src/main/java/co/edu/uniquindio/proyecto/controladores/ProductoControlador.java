@@ -7,6 +7,8 @@ import co.edu.uniquindio.proyecto.model.Categoria;
 
 import java.util.List;
 
+import co.edu.uniquindio.proyecto.model.Estado;
+import co.edu.uniquindio.proyecto.model.Producto;
 import co.edu.uniquindio.proyecto.servicios.interfaces.ProductoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -68,20 +70,30 @@ public class ProductoControlador {
         return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK, false, productoServicio.listarProductosCategoria(categoria)));
     }//Es una enumeracion
 
-//    @GetMapping("/lista/productosEstado")
-//    List<ProductoGetDTO> listarProductosEstado(Estado estado) throws Exception;
-//
-//    @GetMapping("/lista/productosNombre")
-//    List<ProductoGetDTO> listarProductoNombre(String nombre) throws Exception;
-//
-//    @GetMapping("/lista/listarProductosPrecio")
-//    List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
-//
-//    @GetMapping("/lista/ProductoFavoritos")
-//    List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception;
-//
+    @GetMapping("/lista/productosEstado")
+    public ResponseEntity<MensajeDTO>listarProductosEstado(@RequestBody Estado estado)throws Exception{
+        return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK,false, productoServicio.listarProductosEstado(estado)));
+    }
+
+    @GetMapping("/lista/productosNombre") //preguntar por este
+    public ResponseEntity<MensajeDTO> listarProductoNombre(@RequestBody String nomProducto) throws Exception{
+        return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK,false,productoServicio.listarProductoNombre(nomProducto)));
+    }
+
+    @GetMapping("/lista/listarProductosPrecio")
+    public ResponseEntity<MensajeDTO> listarProductosPrecio(@RequestBody float precioMin, @RequestBody float precioMax) throws Exception{
+        return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK,false, productoServicio.listarProductosPrecio(precioMax,precioMin)));
+    }
+
+    @GetMapping("/lista/ProductoFavoritos")
+    public ResponseEntity<MensajeDTO>listarProductoFavoritos(@RequestBody int codigoUsuario) throws Exception{
+        return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO(HttpStatus.OK,false, productoServicio.listarProductoFavoritos(codigoUsuario)));
+    }
+
 //    @GetMapping("/lista/ProductoPropio")
-//    List<ProductoGetDTO> lsitarProductoPropio(int codigoUsuario)throws Exception;//listar los productos que el usuario publica
-//
+//    public ResponseEntity<MensajeDTO> lsitarProductoPropio(int codigoUsuario)throws Exception;{
+//        return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK,false,productoServicio.listarProductosUsuario(codigoUsuario)));
+//    }//listar los productos que el usuario publica
+
 
 }

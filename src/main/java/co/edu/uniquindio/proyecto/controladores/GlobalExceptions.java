@@ -10,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.naming.directory.AttributeInUseException;
 import javax.print.AttributeException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +32,11 @@ public class GlobalExceptions {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new
                 MensajeDTO(HttpStatus.FORBIDDEN, true, "No se puede acceder a este recurso"));
     }
-//    @ExceptionHandler(AttributeException.class)
-//    public ResponseEntity<MensajeDTO> throwAttributeException(AttributeException e) {
-//        return ResponseEntity.badRequest().body(new MensajeDTO(HttpStatus.BAD_REQUEST, true,
-//                e.getClass()));
- //   }
+    @ExceptionHandler(AttributeInUseException.class)
+    public ResponseEntity<MensajeDTO> throwAttributeException(AttributeException e) {
+        return ResponseEntity.badRequest().body(new MensajeDTO(HttpStatus.BAD_REQUEST, true,
+                e.getClass()));
+    }
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<MensajeDTO> validationException(MethodArgumentNotValidException ex){
         List<String> messages = new ArrayList<>();
