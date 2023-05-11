@@ -41,6 +41,16 @@ public class ComentarioServicioImpl implements ComentarioServicio {
         return respuesta;
     }
 
+    @Override
+    public int eliminarComentario(ComentarioDTO comentario) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public ComentarioGetDTO obtenerComentario(int codigoComentario) throws Exception {
+        return null;
+    }
+
     private ComentarioGetDTO convertir(Comentario c) {
         ComentarioGetDTO comentarioGetDTO = new ComentarioGetDTO(
         c.getCodigo(), c.getFechaComentario(),c.getMensaje(),c.getCodigoProducto().getCodigo(),c.getCodigoUsuario().getCodigo());

@@ -12,6 +12,11 @@ public class DomicilioServicioImpl implements DomicilioServicio {
     }
 
     @Override
+    public UsuarioGetDTO enviarDomicilio(String direccion, int codigoUsuario, int codigoProducto) {
+        return null;
+    }
+
+
     public UsuarioGetDTO enviarDomicilio(String direccion, int codigoUsuario) {
         return null;
     }
