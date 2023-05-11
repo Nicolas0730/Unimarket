@@ -9,7 +9,7 @@ import java.util.List;
 public interface CompraServicio {
 
 
-//    Compra obtenerCompra(Integer idCompra)throws Exception;
+   Compra obtenerCompra(Integer idCompra)throws Exception;
 
 
     int crearCompra(CompraDTO compraDTO);

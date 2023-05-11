@@ -7,7 +7,10 @@ import java.util.List;
 
 public class CompraGetDTO {
 
-    LocalDateTime fechaCompra;
+    private int codigo;
+    private LocalDateTime fechaCompra;
+
+    private double totalCompra;
     private int codigoDomicilio;
     private int codigoUsuario;
     private MedioPago metodoPago; //ENUM

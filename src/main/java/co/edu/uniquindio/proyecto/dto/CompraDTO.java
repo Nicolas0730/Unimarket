@@ -10,4 +10,6 @@ public class CompraDTO {
     private MedioPago metodoPago; //ENUM
 
     private List<DetalleCompraDTO> detalleCompraDTO;
+
+    private double totalCompra;
 }

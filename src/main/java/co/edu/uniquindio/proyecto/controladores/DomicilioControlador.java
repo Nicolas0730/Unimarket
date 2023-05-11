@@ -1,7 +1,6 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
 
 import co.edu.uniquindio.proyecto.dto.MensajeDTO;
-import co.edu.uniquindio.proyecto.dto.UsuarioGetDTO;
 import co.edu.uniquindio.proyecto.servicios.interfaces.DomicilioServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

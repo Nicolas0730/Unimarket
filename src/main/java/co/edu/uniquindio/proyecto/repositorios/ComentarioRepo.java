@@ -10,9 +10,10 @@ import java.util.List;
 @Repository
 public interface ComentarioRepo extends JpaRepository<Comentario,Integer> {
 
-    //Necesito buscar la existencia de un comentario para algo?
-    @Query("SELECT u from Comentario u WHERE u.codigo= :codigoComentario")
-    Comentario buscarComentario(int codigoComentario);
+//    //Necesito buscar la existencia de un comentario para algo?
+//    @Query("SELECT u from Comentario u WHERE u.codigo= :codigoComentario")
+//    Comentario buscarComentario(int codigoComentario);
 
+    @Query("select c from Comentario c")
     List<Comentario> listarComentario(int codigoProducto);
 }

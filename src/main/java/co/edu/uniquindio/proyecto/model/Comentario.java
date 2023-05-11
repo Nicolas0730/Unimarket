@@ -34,12 +34,12 @@ public class Comentario implements Serializable {
     //-------------------------------- Relaciones ---------------------
 
     @ManyToOne
-    @JoinColumn(nullable = false) //Un comentario corresponde a un producto
-    private Producto codigoProducto; // necesita que exista un comentario
+
+    private Producto producto; // necesita que exista un comentario
 
     @ManyToOne
-    @JoinColumn(nullable = false) //Un comentario tiene un usuario (que lo escribio)
-    private Usuario codigoUsuario; // Necesita que un usuario exista
+
+    private Usuario  usario;
 
 
 

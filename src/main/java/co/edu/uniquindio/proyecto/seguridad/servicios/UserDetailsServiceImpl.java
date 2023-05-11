@@ -22,9 +22,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private AdministradorRepo adminRepo;
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<Usuario> cliente = clienteRepo.findByEmail(email);
+        Optional<Usuario> cliente = clienteRepo.findByCorreo(email);
         if(cliente.isEmpty()){
-            Optional<Administrador> admin = adminRepo.findByEmail(email);
+            Optional<Administrador> admin = adminRepo.findByCorreo(email);
             if(admin.isEmpty())
                 throw new UsernameNotFoundException("El usuario no existe");
             return UserDetailsImpl.build(admin.get());

@@ -17,6 +17,11 @@ public class CompraServicioImpl implements CompraServicio {
 //    }
 
     @Override
+    public Compra obtenerCompra(Integer idCompra) throws Exception {
+        return null;
+    }
+
+    @Override
     public int crearCompra(CompraDTO compraDTO) {
         return 0;
     }

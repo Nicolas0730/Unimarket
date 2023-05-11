@@ -20,5 +20,5 @@ public interface UsuarioRepo extends JpaRepository<Usuario,Integer> {
     Usuario buscarUsuarioCodigo (int codigo);
 
 
-    Optional<Usuario> findByEmail(String email);
+    Optional<Usuario> findByCorreo(String correo);
 }

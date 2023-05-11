@@ -55,27 +55,25 @@ public class Producto implements Serializable {
 
     //-------------------------------- Relaciones -------------------------------
 
-    @ManyToOne
-    private Usuario vendedor; //Un producto tiene 1 vendedor. El producto depende del vendedor
-
-    //    @ElementCollection?????????
-    //@Column(nullable = false)
     private Estado estado; //@Enum 1 producto tiene 1 estado
 
-    @ManyToMany(mappedBy = "productosFav")
-    private List<Usuario> usuarios; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
+    @ManyToOne
+    private Usuario usuarios; //Un producto tiene muchos usuarios . El producto depende del usuario que elija la lista de productos favoritos
 
-    @ElementCollection //26/03 activé el element collection 11:07 pm
-//    @Column(nullable = false)
+    @OneToMany (mappedBy = "producto")
+    private List <ProductoAdministrador> productoAdministrador;
+    @OneToMany(mappedBy = "producto")
+    private List <Favorito> favoritos;
+    @ElementCollection
     private List<Categoria> categoria; //@ENUM    1 producto Tiene 1 categoría
 
-    @OneToMany(mappedBy = "codigoProducto") //Un producto no depende de un comentario
+    @OneToMany(mappedBy = "producto") //Un producto no depende de un comentario
     private List<Comentario> comentarios; // Un producto tiene muchos comentarios
 
-    @OneToMany(mappedBy = "fotoProducto")
-    private List<Imagen> imagenesProducto; //@ElemenCollection?
+   @ElementCollection
+    private List<String> imagenes;
 
-    @ManyToOne() //Producto no depende de detalle compra
-    private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra
+    @ManyToMany(mappedBy = "productos") //Producto no depende de detalle compra
+    private  List <DetalleCompra> detalleCompras; //Un producto pertenece a 1 detalleCompra
 
 }

@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 @ToString
 public class ComentarioGetDTO {
 
-    int codigoComentario;
-    LocalDateTime fechaCreacion;
+   private  int codigoComentario;
+    private LocalDateTime fechaCreacion;
     private String mensaje;
     private int codigoUsuario;
     private int codigoProducto;

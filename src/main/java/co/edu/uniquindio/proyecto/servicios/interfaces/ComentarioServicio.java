@@ -13,7 +13,6 @@ public interface ComentarioServicio {
     //No se contempló la opción de editar comentario ni eliminar
     List<ComentarioGetDTO> listarComentario(int codigoProducto);//solo USUARIOS LOGUEADOS PUEDEN listar los  comentarios que tenga el producto
 
-
     int eliminarComentario(ComentarioDTO comentario) throws Exception;// borrar el comentario con el codigo
 
     ComentarioGetDTO obtenerComentario(int codigoComentario) throws Exception;

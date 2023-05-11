@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class RemateServicioImpl implements RemateServicio {
+<<<<<<< HEAD
 
     public ProductoGetDTO aplicarRemate(int codigoProducto, int codigoUsuario) {
         return null;
@@ -18,6 +19,15 @@ public class RemateServicioImpl implements RemateServicio {
 
 
     public ProductoGetDTO actualizarRemate(int codigoProducto, int codigoUsuario) {
+=======
+    @Override
+    public ProductoGetDTO aplicarRemate(int codigoProducto, int codigoUsuario, float precioProducto) {
+        return null;
+    }
+
+    @Override
+    public ProductoGetDTO actualizarRemate(int codigoProducto, int codigoUsuario, float precioProducto) {
+>>>>>>> main
         return null;
     }
 

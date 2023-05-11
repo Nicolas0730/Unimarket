@@ -1,14 +1,19 @@
-package co.edu.uniquindio.proyecto.Controladores;
+package co.edu.uniquindio.proyecto.controladores;
+
+
 
 import co.edu.uniquindio.proyecto.dto.MensajeDTO;
 import co.edu.uniquindio.proyecto.dto.UsuarioDTO;
 import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
+import co.edu.uniquindio.proyecto.servicios.interfaces.UsuarioServicio;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/api/usuario")
 @AllArgsConstructor
 public class UsuarioControlador {
@@ -16,8 +21,9 @@ public class UsuarioControlador {
     private final UsuarioServicio usuarioServicio;
 
     @PostMapping("/crear")
-    public ResponseEntity<MensajeDTO> crearUsuario(@RequestBody  UsuarioDTO usuarioDTO)  throws Exception{
-        return ResponseEntity.status(HttpStatus.CREATED).body( new MensajeDTO(HttpStatus.CREATED, false, usuarioServicio.crearUsuario(usuarioDTO)) );
+    public ResponseEntity<MensajeDTO> crearUsuario(@Valid @RequestBody UsuarioDTO usuarioDTO)  throws Exception{
+        return ResponseEntity.status(200).body( new MensajeDTO(HttpStatus.OK,
+                false, "Usuario creado exitosamente! Código: "+ usuarioServicio.crearUsuario(usuarioDTO)) );
     }
 
     @PutMapping("/actualizar/{codigoUsuario}")
@@ -27,7 +33,7 @@ public class UsuarioControlador {
 
     @DeleteMapping("/eliminar/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> eliminiarUsuario(@PathVariable int codigoUsuario) throws Exception{
-        usuarioServicio .eliminarUsuario(codigoUsuario);
+        usuarioServicio.eliminarUsuario(codigoUsuario);
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, "Usuario eliminado correctamente") );
     }
 
@@ -37,5 +43,12 @@ public class UsuarioControlador {
     }
 
 
-
+//obtener debe retornar un UsuarioGetDTO (no borren el que ya tiene)
 }
+
+
+
+
+
+
+

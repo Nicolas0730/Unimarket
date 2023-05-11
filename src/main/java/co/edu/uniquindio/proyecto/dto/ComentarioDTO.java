@@ -9,17 +9,20 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Getter
 @Setter
 public class ComentarioDTO {
 
     //No va el codigo del comentario? o este se genera 24/03 10:38 pm
-    @Length(min = 0,max = 500,message = "La contraseña debe tener máximo 500 caracteres")
-    @NotBlank(message = "La contraseña no puede ser vacía")
-    @NotNull(message = "La contraseña no puede ser null")
+    @Length(min = 0,max = 500)
+    @NotBlank(message = "El comentario no puede estar vacio")
     private String mensaje;
     private Usuario codigoUsuario;
     private Producto codigoProducto;
+
+    private LocalDateTime fecha;
 
 }

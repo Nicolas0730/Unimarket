@@ -29,19 +29,18 @@ public class Compra implements Serializable {
     @Column(nullable = false)
     private double totalCompra;
 
-    @ManyToOne()          //Una compra necesita 1 usuario, un usuario no necesita una compra
-    @JoinColumn(nullable = false)
+    @ManyToOne
     private Usuario usuario;
 
-    @ElementCollection //Si es element collection a pesar de que es solo 1 medio de pago?
-    private List<MedioPago> medioPago; //Enumeracion
+    @Column (nullable = false)
+   private MedioPago medioPago;
 
     @ManyToOne  //Una compra tiene un domicilio. La compra puede existir sin el domicilio
     @JoinColumn(nullable = false)
     private Domicilio domicilio;
 
     @OneToMany(mappedBy = "compra")
-    private List<DetalleCompra> compras; //Compra no depende de detalleCompra
+    private List<DetalleCompra> detalleCompras; //Compra no depende de detalleCompra
 
 
 }

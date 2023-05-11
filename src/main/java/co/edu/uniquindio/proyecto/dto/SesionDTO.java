@@ -14,7 +14,7 @@ public class SesionDTO {
 
     @NotNull
     @Email
-    private String email;
+    private String correo;
     @NotNull
     private String password;
 }
