@@ -25,7 +25,7 @@ public class UsuarioDTO {
     @NotBlank(message = "La contraseña no puede ser vacía")
     @NotNull(message = "La contraseña no puede ser null")
 //    @Pattern(regexp = "[L-_.*]1-40") //Valida una estructura mediante una expresión regular indicada
-    private String pass;
+    private String password;
     @Length(max = 100, message = "La dirección debe tener máximo 100 caracteres")
     private String direccion;
 
