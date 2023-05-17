@@ -45,7 +45,7 @@ public class ProductoDTO {
     @PositiveOrZero
     private float precio;
 
-    private int codigoVendedor;
+    private int codigoUsuario;
 
     private List<String> imagenes;
 

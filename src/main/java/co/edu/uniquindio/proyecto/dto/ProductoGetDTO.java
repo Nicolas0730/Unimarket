@@ -20,20 +20,23 @@ public class ProductoGetDTO {
 
     private int codigo;
 
+    private Estado estado;
+
+    private LocalDateTime fechaLimite;
+
     private String nombre;
 
     private String descripcion;
 
     private int unidades;
 
-    private double precio;
+    private float precio;
 
-    private int codigoVendedor;
+    private int codigoUsuario;
 
-     private List<Imagen> imagenes;
-     private  List<Categoria> categorias;
+    private List<String> imagenes;
 
-     private LocalDateTime fechaLimite;
+    private List<Categoria> categorias;
 
 }
 

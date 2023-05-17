@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class Producto implements Serializable {
+public class Producto  implements Serializable {
 
 
     //-------------------------------- Atributos -------------------------------
