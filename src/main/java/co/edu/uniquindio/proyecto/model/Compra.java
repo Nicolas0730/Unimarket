@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Positive;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CollectionType;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -38,6 +37,8 @@ public class Compra implements Serializable {
     @ManyToOne  //Una compra tiene un domicilio. La compra puede existir sin el domicilio
     @JoinColumn(nullable = false)
     private Domicilio domicilio;
+
+
 
     @OneToMany(mappedBy = "compra")
     private List<DetalleCompra> detalleCompras; //Compra no depende de detalleCompra

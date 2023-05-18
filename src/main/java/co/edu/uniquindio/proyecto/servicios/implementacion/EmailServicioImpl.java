@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.servicios.implementacion;
 
+import co.edu.uniquindio.proyecto.dto.EmailDTO;
 import co.edu.uniquindio.proyecto.servicios.interfaces.EmailServicio;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,5 +16,10 @@ public class EmailServicioImpl implements EmailServicio {
     @Override
     public String emailCompra(String emailUsuarioVendedor, String emailUsuarioComprador, int codigoProducto) {
         return null;
+    }
+
+    @Override
+    public void enviarEmail(EmailDTO recuperacionPassword) {
+
     }
 }

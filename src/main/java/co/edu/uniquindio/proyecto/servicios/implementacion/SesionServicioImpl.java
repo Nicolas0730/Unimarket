@@ -24,7 +24,7 @@ public class SesionServicioImpl implements SesionServicio {
 
     public TokenDTO login(SesionDTO sesionDTO) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(sesionDTO.getEmail(),
+                new UsernamePasswordAuthenticationToken(sesionDTO.getCorreo(),
                         sesionDTO.getPassword())
 
         );

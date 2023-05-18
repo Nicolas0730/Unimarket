@@ -21,29 +21,30 @@ public class UsuarioControlador {
     private final UsuarioServicio usuarioServicio;
 
     @PostMapping("/crear")
-    public ResponseEntity<MensajeDTO> crearUsuario(@Valid @RequestBody UsuarioDTO usuarioDTO)  throws Exception{
-        return ResponseEntity.status(200).body( new MensajeDTO(HttpStatus.OK,
-                false, "Usuario creado exitosamente! Código: "+ usuarioServicio.crearUsuario(usuarioDTO)) );
+    public ResponseEntity<MensajeDTO> crearUsuario(@RequestBody  UsuarioDTO usuarioDTO)  throws Exception
+    {
+        return ResponseEntity.status(HttpStatus.CREATED).body( new MensajeDTO(HttpStatus.CREATED, false,
+                usuarioServicio.crearUsuario(usuarioDTO)) );
     }
 
     @PutMapping("/actualizar/{codigoUsuario}")
-    public ResponseEntity<MensajeDTO> actualizarUsuario(@PathVariable int codigoUsuario, @RequestBody UsuarioDTO usuarioDTO) throws Exception{
+    public ResponseEntity<MensajeDTO> actualizarUsuario(@PathVariable int codigoUsuario, @RequestBody UsuarioDTO usuarioDTO) throws Exception
+    {
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, usuarioServicio.actualizarUsuario(codigoUsuario, usuarioDTO)));
     }
 
     @DeleteMapping("/eliminar/{codigoUsuario}")
-    public ResponseEntity<MensajeDTO> eliminiarUsuario(@PathVariable int codigoUsuario) throws Exception{
-        usuarioServicio.eliminarUsuario(codigoUsuario);
+    public ResponseEntity<MensajeDTO> eliminiarUsuario(@PathVariable int codigoUsuario) throws Exception
+    {
+        usuarioServicio.eliminiarUsuario(codigoUsuario);
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, "Usuario eliminado correctamente") );
     }
 
     @GetMapping("/obtener/{codigoUsuario}")
-    public ResponseEntity<MensajeDTO> obtenerUsuario(@PathVariable int codigoUsuario) throws Exception{
+    public ResponseEntity<MensajeDTO> obtenerUsuario(@PathVariable int codigoUsuario) throws Exception
+    {
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, usuarioServicio.obtenerUsuario(codigoUsuario)));
     }
-
-
-//obtener debe retornar un UsuarioGetDTO (no borren el que ya tiene)
 }
 
 

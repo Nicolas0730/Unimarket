@@ -32,7 +32,7 @@ public class Usuario extends Persona implements Serializable {
     @OneToMany (mappedBy = "usuario")
     private List <Comentario> comentarios;
 
-    @OneToMany (mappedBy = "usuario")
+    @OneToMany (mappedBy = "usuarios")
     private List <Producto> productos;
 
     @OneToMany (mappedBy = "usuario")
@@ -40,5 +40,7 @@ public class Usuario extends Persona implements Serializable {
 
     @OneToMany (mappedBy = "usuario")
     private List<Favorito> favoritos;
+
+
 
 }

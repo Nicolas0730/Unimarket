@@ -13,6 +13,10 @@ import java.util.List;
 public interface CompraRepo extends JpaRepository <Compra, Integer> {
 
 
+    @Query("select c from Compra c where c.usuario.codigo = :codigoUsuario")
+    List<Compra> listarComprasUsuario(int codigoUsuario);
+
+
 //    @Query("select c from Compra c where c.codigo = :codigo")
 //    RemateUsuario obtenerCompra (int codigoCompra);
 //

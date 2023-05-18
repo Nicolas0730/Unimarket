@@ -9,13 +9,17 @@ import java.util.List;
 public interface CompraServicio {
 
 
-   Compra obtenerCompra(Integer idCompra)throws Exception;
+
+    int crearCompra(CompraDTO compraDTO) throws Exception;
 
 
-    int crearCompra(CompraDTO compraDTO);
-//se debe guardar, además del cliente y el producto (o los productos), la fecha, el total de la compra y el método de pago.
-    List<CompraGetDTO> listarCompras(int codigoUsuario); //listar compras dado el codigo del usuario
-    CompraGetDTO obtenerCompra(int codigoCompra);
+    List<CompraGetDTO> listarComprasUsuario (int codigoUsuario) throws Exception;
+
+
+    CompraGetDTO obtenerCompra(int codigoCompra) throws Exception;
+
+
+    Compra obtener(int codigoCompra) throws Exception;
 
 
 }

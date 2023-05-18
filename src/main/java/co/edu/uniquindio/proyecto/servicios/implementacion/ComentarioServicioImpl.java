@@ -19,27 +19,32 @@ public class ComentarioServicioImpl implements ComentarioServicio {
 
     @Override
     public int crearComentario(ComentarioDTO comentarioDTO) throws Exception {
-        Comentario comentario = new Comentario();
+//        Comentario comentario = new Comentario();
+//
+//        comentario.setMensaje(comentarioDTO.getMensaje());
+//        comentario.setCodigoProducto(comentario.getCodigoProducto());
+//        comentario.setCodigoUsuario(comentarioDTO.getCodigoUsuario());
 
-        comentario.setMensaje(comentarioDTO.getMensaje());
-        comentario.setCodigoProducto(comentario.getCodigoProducto());
-        comentario.setCodigoUsuario(comentarioDTO.getCodigoUsuario());
-
-        return comentarioRepo.save(comentario).getCodigo();
+        return 0;
     }
 
     @Override
     public List<ComentarioGetDTO> listarComentario(int codigoProducto) {
-
-        List<Comentario> list = comentarioRepo.listarComentario(codigoProducto);
-        List<ComentarioGetDTO> respuesta = new ArrayList<>();
-
-        for (Comentario c : list){
-            respuesta.add(convertir(c));
-        }
-
-        return respuesta;
+        return null;
     }
+
+//    @Override
+//    public List<ComentarioGetDTO> listarComentario(int codigoProducto) {
+//
+//        List<Comentario> list = comentarioRepo.listarComentario(codigoProducto);
+//        List<ComentarioGetDTO> respuesta = new ArrayList<>();
+//
+//        for (Comentario c : list){
+//            respuesta.add(convertir(c));
+//        }
+//
+//        return respuesta;
+//    }
 
     @Override
     public int eliminarComentario(ComentarioDTO comentario) throws Exception {
@@ -51,11 +56,11 @@ public class ComentarioServicioImpl implements ComentarioServicio {
         return null;
     }
 
-    private ComentarioGetDTO convertir(Comentario c) {
-        ComentarioGetDTO comentarioGetDTO = new ComentarioGetDTO(
-        c.getCodigo(), c.getFechaComentario(),c.getMensaje(),c.getCodigoProducto().getCodigo(),c.getCodigoUsuario().getCodigo());
-        return comentarioGetDTO;
-    }
+//    private ComentarioGetDTO convertir(Comentario c) {
+//        ComentarioGetDTO comentarioGetDTO = new ComentarioGetDTO(
+//        c.getCodigo(), c.getFechaComentario(),c.getMensaje(),c.getCodigoProducto().getCodigo(),c.getCodigoUsuario().getCodigo());
+//        return comentarioGetDTO;
+//    }
 
 
 }

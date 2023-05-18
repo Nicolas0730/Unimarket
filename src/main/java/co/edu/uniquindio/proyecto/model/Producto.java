@@ -73,7 +73,7 @@ public class Producto  implements Serializable {
    @ElementCollection
     private List<String> imagenes;
 
-    @ManyToMany(mappedBy = "productos") //Producto no depende de detalle compra
+    @OneToMany(mappedBy = "producto") //Producto no depende de detalle compra
     private  List <DetalleCompra> detalleCompras; //Un producto pertenece a 1 detalleCompra
 
 }

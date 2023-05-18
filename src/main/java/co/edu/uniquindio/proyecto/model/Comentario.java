@@ -34,12 +34,10 @@ public class Comentario implements Serializable {
     //-------------------------------- Relaciones ---------------------
 
     @ManyToOne
-
     private Producto producto; // necesita que exista un comentario
 
     @ManyToOne
-
-    private Usuario  usario;
+    private Usuario  usuario;
 
 
 

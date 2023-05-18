@@ -26,13 +26,13 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     @Query ("select p from Producto p where p.estado = :estado")
     List<Producto> listarProductosEstado (Estado estado);
 
-    @Query ("select p from Producto p where p.vendedor.codigo = :codigoUsuario")
+    @Query ("select p from Producto p where p.usuarios.codigo = :codigoUsuario")
     List<Producto> listarProductosUsuario (int codigoUsuario);
 
     @Query ("select p from Producto p where p.precio > :precioMin and p.precio < :precioMax")
     List<Producto> listarProductoPrecio (float precioMin, float precioMax);
 
-    @Query ("select p from Producto p join p.vendedor u where u.codigo = :codigo")
+    @Query ("select p from Producto p join p.usuarios u where u.codigo = :codigo")
     List<Producto> listarProductoFavoritos (int codigo);
 
 }

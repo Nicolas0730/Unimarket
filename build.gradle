@@ -32,19 +32,16 @@ dependencies {
      La segunda dependencia (mysql-connector-java) es el driver de conexión con el sistema de
      gestión de base de datos, que para nuestro caso es MySQL.
      */
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'mysql:mysql-connector-java'
-
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    //Se agregaron porque no se reconocía jakarta en la clase JwtAuthenticationFilter
-    implementation 'jakarta.platform:jakarta.jakartaee-api:9.1.0'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
-
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'com.cloudinary:cloudinary-http44:1.33.0'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'

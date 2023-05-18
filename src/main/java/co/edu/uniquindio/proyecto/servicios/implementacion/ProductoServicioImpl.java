@@ -44,14 +44,15 @@ public class ProductoServicioImpl implements ProductoServicio {
     }
 
     @Override
-    public int actualizarProductos(int codigoProducto, ProductoGetDTO productoDTO) throws Exception {
-        validarExiste (codigoProducto);
+    public int actualizarProductos(int codigoProducto, ProductoGetDTO productoGetDTO) throws Exception {
+        validarExiste(codigoProducto);
 
-        Producto producto = convertir(productoDTO);
+        Producto producto = convertir(productoGetDTO);
         producto.setCodigo(codigoProducto);
 
-        return productoRepo.save(producto).getCodigo();
+        return productoRepo.save( producto ).getCodigo();
     }
+
 
     @Override
     public int actualizarUnidades(int codigoProducto, int unidades) throws Exception {
