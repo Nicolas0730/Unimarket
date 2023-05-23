@@ -23,7 +23,7 @@ public class Persona {
     private String nombre;
     @Column(nullable = false, length = 150,unique = true)
     private String correo;
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 120)
     private String password;
     @Column(nullable = true, length = 150)
     private String direccion;
