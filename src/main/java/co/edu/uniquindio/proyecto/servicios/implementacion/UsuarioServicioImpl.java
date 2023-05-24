@@ -114,7 +114,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         usuario.setCorreo( usuarioDTO.getCorreo() );
         usuario.setDireccion( usuarioDTO.getDireccion() );
         usuario.setTelefono( usuarioDTO.getTelefono() );
-        usuario.setPassword( usuarioDTO.getPass() );
+        usuario.setPassword( passwordEncoder.encode(usuarioDTO.getPass()) );
 
         return usuario;
     }

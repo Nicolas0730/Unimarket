@@ -25,8 +25,8 @@ public class WebSecurityConfig {
         http.csrf().disable();
         http.cors();
 
-        http.authorizeHttpRequests().requestMatchers("/api/sesion/**").permitAll();
-        http.authorizeHttpRequests().requestMatchers("/api/productos/crear**").permitAll();
+        //http.authorizeHttpRequests().requestMatchers("/api/sesion/**").permitAll();
+        //http.authorizeHttpRequests().requestMatchers("/api/productos/crear**").permitAll();
        // http.authorizeHttpRequests().requestMatchers(HttpMethod.GET,"/api/productos/**").permitAll().anyRequest().authenticated();
 
          http.authorizeHttpRequests().anyRequest().permitAll(); //Se usa mientras se prueba
