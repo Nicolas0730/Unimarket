@@ -10,6 +10,6 @@ import lombok.Setter;
 @Setter
 public class TokenDTO {
 
-    @NotNull
     String token;
+    String refreshToken;
 }

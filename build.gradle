@@ -44,6 +44,7 @@ dependencies {
     //Se agregaron porque no se reconocía jakarta en la clase JwtAuthenticationFilter
     implementation 'jakarta.platform:jakarta.jakartaee-api:9.1.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
+    implementation 'com.cloudinary:cloudinary-http44:1.33.0'
 
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'

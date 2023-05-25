@@ -8,6 +8,8 @@ public interface SesionServicio {
 
     TokenDTO login(SesionDTO sesionDTO); //El token será agregado automaticamente por el servidor
 
+    TokenDTO refreshToken(TokenDTO tokenDTO) throws Exception;
+
     void logout(int codigoUsuario);
 
     void finSesion(int codigoUsuario);

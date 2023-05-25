@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 public class AdministradorServicioImpl implements AdministradorServicio {
     @Override
     public ProductoGetDTO autorizarProductoDto(ProductoDTO productoDTO) throws Exception {
+
+
+
+
+
         return null;
     }
 
