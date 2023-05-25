@@ -38,9 +38,9 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setFechaPublicacion(LocalDateTime.now());
         producto.setFechaLimiteProducto(LocalDateTime.now().plusDays(60));
         producto.setVendedor(usuarioServicio.obtener(productoDTO.getCodigoVendedor()));
-        producto.setImagenesProducto(productoDTO.getImagenes());
+        producto.setImagen(productoDTO.getImagen());
         producto.setEstado(productoDTO.getEstado());
-        producto.setCategoria(productoDTO.getCategorias());     // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
+        producto.setCategoria(productoDTO.getCategoria());   // Estos toca corregirlos porque genera errores 27/03 3:02 Pm
 
 
         return productoRepo.save(producto).getCodigo();
@@ -87,7 +87,7 @@ public class ProductoServicioImpl implements ProductoServicio {
                     producto.getUnidades(),
                     producto.getPrecio(),
                     producto.getVendedor().getCodigo(),
-                    producto.getImagenesProducto(),
+                    producto.getImagen(),
                     producto.getCategoria(),
                     producto.getFechaLimiteProducto()
             );
@@ -239,7 +239,7 @@ public class ProductoServicioImpl implements ProductoServicio {
                 producto.getUnidades(),
                 producto.getPrecio(),
                 producto.getVendedor().getCodigo(),
-                producto.getImagenesProducto(),
+                producto.getImagen(),
                 producto.getCategoria(),
                 producto.getFechaLimiteProducto()
         );
@@ -258,8 +258,8 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setDescripcion(productoDTO.getDescripcion());
         producto.setUnidades(productoDTO.getUnidades());
         producto.setPrecio(productoDTO.getPrecio());
-        producto.setImagenesProducto(productoDTO.getImagenes());
-        producto.setCategoria(productoDTO.getCategorias());
+        producto.setImagen(productoDTO.getImagen());
+        producto.setCategoria(productoDTO.getCategoria());
         producto.setEstado(productoDTO.getEstado());
 
         return producto;
@@ -277,8 +277,8 @@ public class ProductoServicioImpl implements ProductoServicio {
         producto.setDescripcion(productoGetDTO.getDescripcion());
         producto.setUnidades(productoGetDTO.getUnidades());
         producto.setPrecio((float) productoGetDTO.getPrecio());
-        producto.setImagenesProducto(productoGetDTO.getImagenes());
-        producto.setCategoria(productoGetDTO.getCategorias());
+        producto.setImagen(productoGetDTO.getImagen());
+        producto.setCategoria(productoGetDTO.getCategoria());
 //        producto.setUsuarios(usuarioServicio.obtener(productoGetDTO.getCodigo()));
         producto.setFechaLimiteProducto(productoGetDTO.getFechaLimite());
 

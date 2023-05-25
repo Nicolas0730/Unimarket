@@ -23,7 +23,7 @@ public class ProductoControlador {
     @Autowired
     private final ProductoServicio productoServicio;
 
-    @PostMapping("/crear")
+    @PostMapping("/crear-producto")
     public ResponseEntity<MensajeDTO> crearProducto(@RequestBody ProductoDTO productoDTO) throws Exception{
         return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO<>(HttpStatus.CREATED, false, productoServicio.crearProducto(productoDTO)));
     }

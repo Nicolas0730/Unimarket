@@ -67,13 +67,14 @@ public class Producto implements Serializable {
 
     @ElementCollection //26/03 activé el element collection 11:07 pm
 //    @Column(nullable = false)
+
     private List<Categoria> categoria; //@ENUM    1 producto Tiene 1 categoría
 
     @OneToMany(mappedBy = "codigoProducto") //Un producto no depende de un comentario
     private List<Comentario> comentarios; // Un producto tiene muchos comentarios
 
-    @OneToMany(mappedBy = "fotoProducto")
-    private List<Imagen> imagenesProducto; //@ElemenCollection?
+    @ElementCollection
+    private List<String> imagen;
 
     @ManyToOne() //Producto no depende de detalle compra
     private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra

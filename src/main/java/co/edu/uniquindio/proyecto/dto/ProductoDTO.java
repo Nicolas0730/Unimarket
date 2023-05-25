@@ -36,7 +36,7 @@ public class ProductoDTO {
     @Length(max = 100)
     @Column (nullable = false)
     private String nombre;
-    @NotNull
+
     @Length(min=1,max = 300,message = "La descripción debe tener máximo 300 caracteres.")
     private String descripcion;
 
@@ -51,13 +51,8 @@ public class ProductoDTO {
 
     //Cómo parametrizo una lista ?
 
-    private List<Imagen> imagenes;
-
-
-  //  private List<String> imagenes;
-
-
-    private List<Categoria> categorias;
+    private List<String>  imagen;
+    private List<Categoria> categoria;
 
 
     private Estado estado;

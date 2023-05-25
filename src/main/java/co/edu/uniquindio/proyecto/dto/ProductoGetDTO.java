@@ -30,9 +30,8 @@ public class ProductoGetDTO {
 
     private int codigoVendedor;
 
-     private List<Imagen> imagenes;
-     private  List<Categoria> categorias;
-
+    private List<String> imagen;
+    private List<Categoria> categoria;
      private LocalDateTime fechaLimite;
 
 }
