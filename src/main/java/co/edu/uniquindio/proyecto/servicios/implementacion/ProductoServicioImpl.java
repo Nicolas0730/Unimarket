@@ -106,6 +106,18 @@ public class ProductoServicioImpl implements ProductoServicio {
         return respuesta;
     }
 
+    @Override
+    public List<ProductoGetDTO> listarProductos() {
+        List<Producto> lista = productoRepo.listarProductos();
+        List<ProductoGetDTO> respuesta = new ArrayList<>();
+
+        for(Producto p : lista){
+            respuesta.add( convertir(p) );
+        }
+
+        return respuesta;
+    }
+
     /**
      * Método que elimina un producto dado su codigo
      * @param codigoProducto
@@ -138,6 +150,11 @@ public class ProductoServicioImpl implements ProductoServicio {
         ProductoGetDTO productoGetDTO= convertir(producto.get());
 
         return productoGetDTO;
+    }
+
+    @Override
+    public Producto obtener(int codigoProducto) throws Exception {
+        return null;
     }
 
     @Override

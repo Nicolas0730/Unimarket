@@ -95,5 +95,11 @@ public class ProductoControlador {
 //        return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO<>(HttpStatus.OK,false,productoServicio.listarProductosUsuario(codigoUsuario)));
 //    }//listar los productos que el usuario publica
 
+    @GetMapping("/listar/productos")
+    public  ResponseEntity<MensajeDTO> listarProducto() throws Exception {
+        return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false,
+                productoServicio.listarProductos() ));
+    }
+
 
 }

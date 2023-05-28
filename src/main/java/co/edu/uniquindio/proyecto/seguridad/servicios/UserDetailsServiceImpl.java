@@ -24,7 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Usuario> cliente = clienteRepo.findByCorreo(email);
         if(cliente.isEmpty()){
-            Optional<Administrador> admin = adminRepo.findByCorreo(email);
+            Optional<Administrador> admin = adminRepo.findByEmail(email);
             if(admin.isEmpty())
                 throw new UsernameNotFoundException("El usuario no existe");
             return UserDetailsImpl.build(admin.get());

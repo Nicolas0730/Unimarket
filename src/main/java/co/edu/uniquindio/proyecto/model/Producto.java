@@ -2,9 +2,7 @@ package co.edu.uniquindio.proyecto.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
@@ -14,7 +12,10 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString
 @EqualsAndHashCode
+@AllArgsConstructor
 public class Producto implements Serializable {
 
 
@@ -44,8 +45,6 @@ public class Producto implements Serializable {
     @Column(nullable = false)
     private float precio;
 
-    @Future
-    @Column(nullable = false)
     private LocalDateTime fechaLimiteProducto;
 
     @Column (nullable = false)
@@ -78,4 +77,12 @@ public class Producto implements Serializable {
     @ManyToOne() //Producto no depende de detalle compra
     private DetalleCompra detalleCompra; //Un producto pertenece a 1 detalleCompra
 
+    /**
+     *
+     */
+    @ManyToOne
+    private Administrador administrador;
+
+    @Column(nullable = false)
+    private String activo;
 }

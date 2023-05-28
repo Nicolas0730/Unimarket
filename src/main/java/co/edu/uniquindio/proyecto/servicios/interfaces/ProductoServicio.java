@@ -4,6 +4,7 @@ import co.edu.uniquindio.proyecto.dto.ProductoDTO;
 import co.edu.uniquindio.proyecto.dto.ProductoGetDTO;
 import co.edu.uniquindio.proyecto.model.Categoria;
 import co.edu.uniquindio.proyecto.model.Estado;
+import co.edu.uniquindio.proyecto.model.Producto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,8 @@ public interface ProductoServicio {
     int eliminarProducto(int codigoProducto) throws Exception;
     ProductoGetDTO obtenerProducto(int codigoProducto) throws Exception;
 
+    Producto obtener(int codigoProducto) throws Exception;
+
     int agregarCarrito(int codigoProducto)throws Exception;
 
     int agregarFavorito (int codigoUsuario, int codigoProducto) throws Exception;
@@ -29,5 +32,7 @@ public interface ProductoServicio {
     List<ProductoGetDTO> listarProductoNombre(String nombre) throws Exception;
     List<ProductoGetDTO> listarProductosPrecio(float precioMin, float precioMax) throws Exception;
     List<ProductoGetDTO> listarProductoFavoritos(int codigoUsuario) throws Exception;
+
+    List<ProductoGetDTO> listarProductos();
 
 }
