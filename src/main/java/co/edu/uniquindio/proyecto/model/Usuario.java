@@ -1,13 +1,8 @@
 package co.edu.uniquindio.proyecto.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -15,10 +10,10 @@ import java.util.List;
  * Extiende la clase padre: Persona
  */
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
 @ToString
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Usuario extends Persona implements Serializable {
 
 
@@ -55,4 +50,6 @@ public class Usuario extends Persona implements Serializable {
 
     @OneToMany(mappedBy = "vendedor") //Un usuarioVendedor no depende de un producto
     private List<Producto> productosVendedor;
+
+
 }
